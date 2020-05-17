@@ -17,8 +17,7 @@
     <script>
         function modal_change()
         {
-        console.log('ho jae bss');
             $('#exampleModalCenter').modal('hide');
             $('#forgot_password').modal('show');
-            }
+         }
     </script>

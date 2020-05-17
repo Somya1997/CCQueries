@@ -10,6 +10,7 @@
       </div>
 </div>
 @endsection
+
 @section('body')
 <div class="ftco-blocks-cover-1">
   <div class="ftco-cover-1 overlay" style="background-image:url('../images/cc2.jpg');">
