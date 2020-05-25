@@ -3,7 +3,7 @@
               <a href="index.html" class="text-black"><span class="text-primary">CC Queries</a>
             </div> -->
             <div class="site-logo">
-              <a href="index.html" class="text-black"><span class="text-primary"><img src="../images/logonew1.png" alt=" " width="300px" height="150px"></a>
+              <a href="{{url('/')}}" class="text-black"><span class="text-primary"><img src="../images/logonew1.png" alt=" " width="250px" height="150px"></a>
             </div>
 
             <div class="col-12">
@@ -26,7 +26,7 @@
                   <li><a href="#contact-section" class="nav-link">Contact</a></li>
                   <!-- <button class="btn btn-primary text-white px-5 float-right"><a href="#login-section" class="nav-link">Login as Admin</a></button> -->
                   <!-- <li><input type="submit" class="btn btn-primary text-white px-5" value="Login as Admin"></li> -->
-                  <li><a data-target="#exampleModalCenter" class="btn btn-secondary text-white py-3 px-5" data-toggle="modal" type="submit">Login</a></li>
+                  <li><a  class="btn btn-secondary text-white py-3 px-5" href="{{route('login') }}" type="submit">Login</a></li>
                 </ul>
               </nav>
 

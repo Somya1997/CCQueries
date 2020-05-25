@@ -20,18 +20,14 @@
         </div>
         <div class="site-mobile-menu-body"></div>
       </div>
-    
+   
       @yield('heading')
       @include('partials._loginmodal')
-
-      <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
-        <div class="container">
-          <br>        
-          @include('partials._nav')
-        </div>     
-      </header>
-
-    @yield('body')
+      @yield('body')
+    
+   
+      @yield('content')
+  
     @include('partials._script')
   </body>
 </html>

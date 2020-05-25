@@ -10,3 +10,5 @@
     <script src="<?php echo asset('js/aos.js')?>"></script>
    
     <script src="{{ URL::asset('js/main.js') }}"></script>
+    <script src="{{asset('js/main2.js') }}"></script>
+    

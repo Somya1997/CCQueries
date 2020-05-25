@@ -270,6 +270,9 @@ h1, h2, h3, h4, h5,
     background: #fff;
     border-color: #f00;
     color: #000; }
+  .space-login{
+    margin-top: 50px;
+  }
 
 .line-height-1 {
   line-height: 1 !important; }

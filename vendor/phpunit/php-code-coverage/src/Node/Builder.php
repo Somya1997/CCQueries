@@ -123,12 +123,12 @@ final class Builder
      * <code>
      * Array
      * (
-     *     [/home/sb/Money/Money.php] => Array
+     *     [/sb/Money/Money.php] => Array
      *         (
      *             ...
      *         )
      *
-     *     [/home/sb/Money/MoneyBag.php] => Array
+     *     [/sb/Money/MoneyBag.php] => Array
      *         (
      *             ...
      *         )

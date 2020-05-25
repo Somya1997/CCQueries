@@ -13,6 +13,8 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" type="text/css">
+    <link href="{{asset('css/theme.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
     <script>
         function modal_change()
