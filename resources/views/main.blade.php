@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     @include('partials._head')
+    @yield('title')
   </head>
 
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -28,5 +29,8 @@
       @yield('content')
   
     @include('partials._script')
+
+    <hr>
+          <p class="text-center">Copyrights MNNIT - All Rights Reserved</p>
   </body>
 </html>
