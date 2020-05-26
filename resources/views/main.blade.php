@@ -20,9 +20,8 @@
         </div>
         <div class="site-mobile-menu-body"></div>
       </div>
-   
+      
       @yield('heading')
-      @include('partials._loginmodal')
       @yield('body')
     
    

@@ -11,53 +11,51 @@
             <!-- HEADER DESKTOP-->
             <!-- <header class="header-desktop">
                 <div class="section__content section__content--p30">
-                    <h1 style="text-align:center; font-family:arial; color:darkorange">CC QUERIES</h1>
-                    
-                    
+                    <h1 style="text-align:center; font-family:arial; color:darkorange">CC QUERIES</h1>     
                 </div>
             </header> -->
             <nav class="navbar navbar-expand-md bg-white ">
-            <div class="container">
-            <!-- <h1 style="text-align:center; font-family:arial; color:darkorange">CC QUERIES</h1> -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                    <h1 style="text-align:center; font-family:arial; color:darkorange">CC QUERIES</h1>
-                    </ul>
+                <div class="container">
+                <!-- <h1 style="text-align:center; font-family:arial; color:darkorange">CC QUERIES</h1> -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="navbar-nav mr-auto">
+                        <h1 style="text-align:center; font-family:arial; color:darkorange">CC QUERIES</h1>
+                        </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                       
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                        <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Authentication Links -->
+                        
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                    @if(Auth::user()->name)
-                                    <a class="dropdown-item" href="{{ route('register') }}">
-                                        {{ __('Register a staff') }}
-                                    </a>
-                                    @endif
-                                    <!-- <form id="register-form" action="{{ route('register') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form> -->
-                                </div>
-                            </li>
-                    </ul>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                        @if(Auth::user()->name=='Admin')
+                                        <a class="dropdown-item" href="{{ route('register') }}">
+                                            {{ __('Register a staff') }}
+                                        </a>
+                                        @endif
+                                        <!-- <form id="register-form" action="{{ route('register') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form> -->
+                                    </div>
+                                </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
             <!-- END HEADER DESKTOP-->
             <!-- MAIN CONTENT-->
             <div class="main-content">
