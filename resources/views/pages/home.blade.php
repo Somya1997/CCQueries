@@ -34,7 +34,7 @@
               <input type="text" class="form-control" placeholder="Enter your complaint number">
             </div>
             <div class="form-group d-flex">
-              <input type="submit" class="btn btn-primary text-white px-5" value="Track Now">
+              <input type="submit" class="btn btn-primary btn-lg text-white px-5" value="Track Now">
             </div>
           </form>
         </div>
@@ -47,7 +47,7 @@
           <p class="mb-5">FOR ANY NEW COMPLAINTS REGISTER HERE.</p>
           <form action="#">
             <div class="form-group d-flex">
-              <div class="col-12"><input type="button" class="btn btn-primary text-white px-5 float-right" value="Register your complaint"></div>
+              <div class="col-12"><a href="{{route('complaints.create')}}" class="btn btn-primary btn-lg text-white px-5 float-right">Register your Complaints</a></div>
             </div>
           </form>
         </div>

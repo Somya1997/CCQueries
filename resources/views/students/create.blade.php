@@ -17,7 +17,11 @@
         </div>
         @endif
 
+<<<<<<< HEAD:resources/views/students/create.blade.php
       <form action="{{ route('students.store') }}" method="POST">
+=======
+      <form action="{{route('complaints.store')}}" method="POST">
+>>>>>>> 190047950e9a2a8d0b456afbacf66bd056d7768b:resources/views/complaints/create.blade.php
           {{ csrf_field() }}
           <div class="form-group">    
               <label for="name">Name:</label>
