@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Complaint extends Model
+class Student extends Model
 {
     public $fillable = [
         'name',

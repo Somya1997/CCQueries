@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Complaint_form_request;
 use Illuminate\Support\Facades\Validator;
-use App\Complaint;
+use App\Student;
 
 class ComplaintsController extends Controller
 {
@@ -25,7 +25,7 @@ class ComplaintsController extends Controller
      */
     public function create()
     {
-       return view('complaints.create');
+       return view('students.create');
     }
 
     /**
@@ -37,14 +37,13 @@ class ComplaintsController extends Controller
     public function store(Complaint_form_request $request)
     {
         //
-        $input = $request->all();
-        dd($input);
-        $complaint = Complaint::complaint();
+
+        Complaint::create($request->all());
 
 
         //redirect to another page
 
-        return redirect('complaints.create')->with('success','Complaint Registered');
+        return redirect('students.create')->with('success','Complaint Registered');
     }
 
     /**
