@@ -47,7 +47,7 @@
           <p class="mb-5">FOR ANY NEW COMPLAINTS REGISTER HERE.</p>
           <form action="#">
             <div class="form-group d-flex">
-              <div class="col-12"><a href="{{route('complaints.create')}}" class="btn btn-primary btn-lg text-white px-5 float-right">Register your Complaints</a></div>
+              <div class="col-12"><a href="{{route('students.create')}}" class="btn btn-primary btn-lg text-white px-5 float-right">Register your Complaints</a></div>
             </div>
           </form>
         </div>
