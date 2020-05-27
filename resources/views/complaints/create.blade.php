@@ -17,7 +17,7 @@
         </div>
         @endif
 
-      <form route="complaints.store" method="POST">
+      <form action="{{route('complaints.store')}}" method="POST">
           {{ csrf_field() }}
           <div class="form-group">    
               <label for="name">Name:</label>
