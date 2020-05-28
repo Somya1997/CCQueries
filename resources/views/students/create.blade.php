@@ -17,45 +17,51 @@
         </div>
         @endif
 
-<<<<<<< HEAD:resources/views/students/create.blade.php
+        @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div><br />
+@endif
+
       <form action="{{ route('students.store') }}" method="POST">
-=======
-      <form action="{{route('complaints.store')}}" method="POST">
->>>>>>> 190047950e9a2a8d0b456afbacf66bd056d7768b:resources/views/complaints/create.blade.php
           {{ csrf_field() }}
           <div class="form-group">    
               <label for="name">Name:</label>
               <input type="text" class="form-control" name="Name" id="name"/>
-              @if ($errors->has('name'))
+              @if ($errors->has('Name'))
                     <span class="text-danger">{{ $errors->first('Name') }}</span>
               @endif
           </div>
 
           <div class="form-group">
               <label for="registrationno">Registration Number:</label>
-              <input type="text" class="form-control" name="Registration No id="registrationno"/>
-              @if ($errors->has('registrationno'))
+              <input type="text" class="form-control" name="Registration_No id="registrationno"/>
+              @if ($errors->has('Registration_No'))
                     <span class="text-danger">{{ $errors->first('Registration Number') }}</span>
               @endif
           </div>
 
           <div class="form-group">
               <label for="phonenumber">Contact Number:</label>
-              <input type="text" class="form-control" name="Contact No." id="phonenumber"/>
-              @if ($errors->has('phonenumber'))
+              <input type="text" class="form-control" name="Contact_No" id="phonenumber"/>
+              @if ($errors->has('Contact_No'))
                     <span class="text-danger">{{ $errors->first('Contact number') }}</span>
               @endif
           </div>
           <div class="form-group">
               <label for="email">Email:</label>
               <input type="text" class="form-control" name="Email" id="email"/>
-              @if ($errors->has('email'))
+              @if ($errors->has('Email'))
                     <span class="text-danger">{{ $errors->first('Email') }}</span>
               @endif
           </div>
           <div class="form-group">
                <label for="natureofproblem">Nature of Problem</label>
-               <select id="natureofproblem" class="form-control" name="Nature of Problem" id="natureofproblem"/>
+               <select id="natureofproblem" class="form-control" name="Nature_of_Problem" id="natureofproblem"/>
                <option selected>Choose...</option>
                <option>Wifi not working</option>
                <option>LAN port broken</option>
@@ -63,35 +69,35 @@
                <option>Damaged Wire</option>
                <option>others</option>
                </select>
-               @if ($errors->has('natureofproblem'))
+               @if ($errors->has('Nature_of_Problem'))
                     <span class="text-danger">{{ $errors->first('Nature of problem') }}</span>
               @endif
           </div>
           <div class="form-group">
               <label for="hostel">Hostel:</label>
               <input type="text" class="form-control" name="Hostel" id="hostel"/>
-              @if ($errors->has('hostel'))
+              @if ($errors->has('Hostel'))
                     <span class="text-danger">{{ $errors->first('Hostel Name') }}</span>
               @endif
           </div>
           <div class="form-group">
               <label for="room">Room No.:</label>
               <input type="text" class="form-control" name="Room" id="room"/>
-              @if ($errors->has('room'))
+              @if ($errors->has('Room'))
                     <span class="text-danger">{{ $errors->first('Room Number') }}</span>
               @endif
           </div>
           <div class="form-group">
               <label for="availabilitytime">Availability Time:</label>
-              <input type="time" class="form-control" name="Availability Time" id="availabilitytime"/>
-              @if ($errors->has('availabilitytime'))
+              <input type="time" class="form-control" name="Availability_Time" id="availabilitytime"/>
+              @if ($errors->has('Availability_Time'))
                     <span class="text-danger">{{ $errors->first('Availability Time') }}</span>
               @endif
           </div>
           <div class="form-group">
               <label for="availabilityday">Availability Date:</label>
-              <input type="date" class="form-control" name="Availability Day" id="availabilityday"/>
-              @if ($errors->has('availabilityday'))
+              <input type="date" class="form-control" name="Availability_Day" id="availabilityday"/>
+              @if ($errors->has('Availability_Day'))
                     <span class="text-danger">{{ $errors->first('Availability Date') }}</span>
               @endif
           </div>           
@@ -99,6 +105,7 @@
               <button type="submit" class="btn btn-warning btn-block">Submit</button>
           </div>
         </form>
+        
       </div>
     </div>
   </div>

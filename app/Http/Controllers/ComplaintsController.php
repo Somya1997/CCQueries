@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Complaint_form_request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Student;
 
@@ -34,16 +34,43 @@ class ComplaintsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Complaint_form_request $request)
+    public function store(Request $request)
     {
         //
+        $data = request()->validate([
+                'name'               => 'required|max:30|',
+                'registrationno'     => 'required|max:15|alpha_num',
+                'phonenumber'        => 'required|size:10|numeric',
+                'email'              => 'required|max:100|email',
+                'natureofproblem'    => 'required|max:100|string',
+                'hostel'             => 'required|max:30|',
+                'room'               => 'required|max:255|numeric',
+                'availabilitytime'   => 'required|max:10',
+                'availabilityday'    => 'required|max:10|date',
+            
+            ]);
 
-        Complaint::create($request->all());
 
+
+        /*$student = new Student;    
+
+        $student->name = $request->name;
+        $student->registrationno = $request->registrationno;
+        $student->phonenumber = $request->phonenumber;
+        $student->email = $request->email;
+        $student->natureofproblem = $request->natureofproblem;
+        $student->hostel = $request->hostel;
+        $student->room = $request->room;
+        $student->availabilitytime = $request->availabilitytime;
+        $student->availabilityday = $request->availabilityday;
+
+            $student-> save();*/
+            $check = Student::create($data);
+            dd(request()->all());
 
         //redirect to another page
 
-        return redirect('students.create')->with('success','Complaint Registered');
+        return redirect()->route('students.create',$show->id)->withsuccess('Form Submitted.');
     }
 
     /**

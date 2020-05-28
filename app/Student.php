@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    public $fillable = [
+    protected $fillable = [
         'name',
         'registrationno',
         'phonenumber',
@@ -15,6 +15,6 @@ class Student extends Model
         'hostel',
         'room',
         'availabilitytime',
-        'availabilityday'      
+        'availabilityday',     
     ];
 }
