@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::resource('students', 'ComplaintsController');
+Route::resource('complaints', 'ComplaintsController');
 Route::get('dashboard','PagesController@getDashboard');
 Route::get('/','PagesController@getIndex');
 

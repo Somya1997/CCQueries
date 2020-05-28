@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Complaint_form_request;
-use Illuminate\Support\Facades\Validator;
-use App\Student;
+use Illuminate\Http\Request;
+use App\Complaint;
 
 class ComplaintsController extends Controller
 {
@@ -25,7 +24,7 @@ class ComplaintsController extends Controller
      */
     public function create()
     {
-       return view('students.create');
+        return view('complaints.create');
     }
 
     /**
@@ -34,16 +33,34 @@ class ComplaintsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Complaint_form_request $request)
+    public function store(Request $request)
     {
-        //
+        $this->validate($request,array(
+            'name' => 'required|max:20',
+            'regno' => 'required',
+            'email' => 'required',
+            'phoneno' =>'required|digits:10|numeric',
+            'nature' =>'required|max:50|string',
+            'hostel' =>'required|max:20',
+            'room' =>'required|numeric',
+            'availabletime'=>'required',
+            'availabledate'=>'required'
+        ));
 
-        Complaint::create($request->all());
+        $complaint= new Complaint;
 
+        $complaint->name = $request->name;
+        $complaint->regno = $request->regno;
+        $complaint->email = $request->email;
+        $complaint->phoneno = $request->phoneno;
+        $complaint->nature = $request->nature;
+        $complaint->hostel = $request->hostel;
+        $complaint->room = $request->room;
+        $complaint->availabletime = $request->availabletime;
+        $complaint->availabledate= $request->availabledate;
 
-        //redirect to another page
-
-        return redirect('students.create')->with('success','Complaint Registered');
+        $complaint->save();
+        return redirect()->route('complaints.show',$complaint->id);
     }
 
     /**
@@ -54,7 +71,7 @@ class ComplaintsController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
