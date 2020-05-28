@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use App\Student;
+use App\Complaint;
 
 class ComplaintsController extends Controller
 {
@@ -25,7 +24,7 @@ class ComplaintsController extends Controller
      */
     public function create()
     {
-       return view('students.create');
+        return view('complaints.create');
     }
 
     /**
@@ -36,41 +35,32 @@ class ComplaintsController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $data = request()->validate([
-                'name'               => 'required|max:30|',
-                'registrationno'     => 'required|max:15|alpha_num',
-                'phonenumber'        => 'required|size:10|numeric',
-                'email'              => 'required|max:100|email',
-                'natureofproblem'    => 'required|max:100|string',
-                'hostel'             => 'required|max:30|',
-                'room'               => 'required|max:255|numeric',
-                'availabilitytime'   => 'required|max:10',
-                'availabilityday'    => 'required|max:10|date',
-            
-            ]);
+        $this->validate($request,array(
+            'name' => 'required|max:20',
+            'regno' => 'required',
+            'email' => 'required',
+            'phoneno' =>'required|digits:10|numeric',
+            'nature' =>'required|max:50|string',
+            'hostel' =>'required|max:20',
+            'room' =>'required|numeric',
+            'availabletime'=>'required',
+            'availabledate'=>'required'
+        ));
 
+        $complaint= new Complaint;
 
+        $complaint->name = $request->name;
+        $complaint->regno = $request->regno;
+        $complaint->email = $request->email;
+        $complaint->phoneno = $request->phoneno;
+        $complaint->nature = $request->nature;
+        $complaint->hostel = $request->hostel;
+        $complaint->room = $request->room;
+        $complaint->availabletime = $request->availabletime;
+        $complaint->availabledate= $request->availabledate;
 
-        /*$student = new Student;    
-
-        $student->name = $request->name;
-        $student->registrationno = $request->registrationno;
-        $student->phonenumber = $request->phonenumber;
-        $student->email = $request->email;
-        $student->natureofproblem = $request->natureofproblem;
-        $student->hostel = $request->hostel;
-        $student->room = $request->room;
-        $student->availabilitytime = $request->availabilitytime;
-        $student->availabilityday = $request->availabilityday;
-
-            $student-> save();*/
-            $check = Student::create($data);
-            dd(request()->all());
-
-        //redirect to another page
-
-        return redirect()->route('students.create',$show->id)->withsuccess('Form Submitted.');
+        $complaint->save();
+        return redirect()->route('complaints.show',$complaint->id);
     }
 
     /**
@@ -81,7 +71,7 @@ class ComplaintsController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
