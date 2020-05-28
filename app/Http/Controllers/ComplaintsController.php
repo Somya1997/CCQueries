@@ -35,17 +35,28 @@ class ComplaintsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,array(
+        $request->validate([
             'name' => 'required|max:20',
             'regno' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'phoneno' =>'required|digits:10|numeric',
             'nature' =>'required|max:50|string',
             'hostel' =>'required|max:20',
             'room' =>'required|numeric',
             'availabletime'=>'required',
             'availabledate'=>'required'
-        ));
+        ],[
+            'name.required' => 'Name is required',
+            'regno.required' => 'Registration Number is required',
+            'email.required' => 'Email is required',
+            'phoneno.required' => 'Contact Number is required',
+            'nature.required' => 'Nature of Problem is required',
+            'hostel.required' => 'Hostel Name is required',
+            'room.required' => 'Room Number is required',
+            'availabletime.required' => 'Time of Availabelity is required',
+            'availabledate.required' => 'Date of Availabelity is required'
+
+        ]);
 
         $complaint= new Complaint;
 
@@ -60,7 +71,7 @@ class ComplaintsController extends Controller
         $complaint->availabledate= $request->availabledate;
 
         $complaint->save();
-        return redirect()->route('complaints.show',$complaint->id);
+        return redirect()->route('complaints.show',$complaint->id)->with('success', 'Complaint Registered Successfully');
     }
 
     /**
