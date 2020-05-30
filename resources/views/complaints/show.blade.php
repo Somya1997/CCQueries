@@ -1,47 +1,33 @@
 @extends('main')
-@section('content')
-          </br>
-          <div class="container">
-           <div class="justify-content-center">
-              <div class="col-md-6 offset-md-3">
-                <h1><p class="text-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complaint Form</p></h1>
-                  <hr>
-
-                  {!! Form::open(['route' => 'complaints.store']) !!}
-                  {{ Form::label('name','Name:') }}
-                  {{ Form::text('name', null, array('class' => 'form-control')) }}
-                  </br>
-                  {{ Form::label('registrationno','Registrationno:') }}
-                  {{ Form::text('registrationno', null, array('class' => 'form-control')) }}
-                  </br>
-                  {{ Form::label('phonenumber','Phone number:') }}
-                  {{ Form::tel('phonenumber', null, array('class' => 'form-control')) }}
-                  </br>
-                  {{ Form::label('email','Email:') }}
-                  {{ Form::email('email', null, array('class' => 'form-control')) }}
-                  </br>
-                  {{ Form::label('natureofproblem','Nature of Problem:') }}
-                  {{ Form::select('natureofproblem', ['p1' => 'Wifi not working','p2' => 'LAN port broken','p3' => 'Weak Connection','p4' => 'Damaged Wire', 'p5' => 'others'],'Wifi not working') }}
-                  </br>
-                  </br>
-                  {{ Form::label('hostel','Hostel Name:') }}
-                  {{ Form::text('hostel', null, array('class' => 'form-control')) }}
-                  </br>
-                  {{ Form::label('room','Room No:') }}
-                  {{ Form::text('room', null, array('class' => 'form-control')) }}
-                  </br>
-                  {{ Form::label('availabilitytime','Availability Time:') }}
-                  {{ Form::time('availabilitytime', null, array('class' => 'form-control')) }}
-                  </br>
-                  {{ Form::label('availabilityday','Availability Date:') }}
-                  {{ Form::date('availabilityday', null, array('class' => 'form-control')) }}
-                  </br>
-
-                  {{ Form::submit('Submit', array('class' => 'btn btn-warning btn-lg btn-block'))}}
-                
-                  {!! Form::close() !!}
-              </div>
-            </div>
+@section('heading')
+<div class="top-bar">
+    <div class="container">
+      <div class="row">
+          <div class="col-12">
+            <center><h2 style="font-size: 50px;color:darkorange"> CC QUERIES</h2></center>
           </div>
-
+        </div>
+      </div>
+</div>
+@endsection
+@section('content')
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2> Show Product</h2>
+            </div>
+            <div class="pull-right">
+                <a class="btn btn-primary" href="{{ route('complaints.index') }}"> Back</a>
+            </div>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Complaint Number:</strong>
+                {{ $complaint->id }}
+            </div>
+        </div>
+    </div>
 @endsection

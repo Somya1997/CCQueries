@@ -11,12 +11,26 @@
 </div>
 @endsection
 @section('content')
+
+        <script type="text/javascript">
+            function showfield(name){
+            if(name=='Other')document.getElementById('div1').style.display="block";
+            else document.getElementById('div1').style.display="none";
+            }
+ 
+            function hidefield() {
+            document.getElementById('div1').style.display='none';
+            }
+        </script>
+        <body onload="hidefield()">
+        
+
             
 <div class="container space-login">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header" style="background:rgba(36, 139, 139, 0.699);">
+                <div class="card-header" style="background:rgba(255, 140, 0, 0.7);color:darkorange">
                 <h1 style="text-align:center; font-family:calibri; color:white;">COMPLAINT FORM</h1>
                 </div>
 
@@ -57,14 +71,15 @@
           </div>
           <div class="form-group">
                <label for="nature">Nature of Problem</label>
-               <select class="form-control" name="nature" id="nature">
-               <option selected>Choose...</option>
-               <option>Wifi not working</option>
-               <option>LAN port broken</option>
-               <option>Weak Connection</option>
-               <option>Damaged Wire</option>
-               <option>others</option>
+               <select class="form-control" name="nature" id="nature" onchange="showfield(this.options[this.selectedIndex].value)">
+               <option selected="selected">Choose...</option>
+               <option value="Wifi not working">Wifi not working</option>
+               <option value="LAN port broken">LAN port broken</option>
+               <option vlaue="Weak Connection">Weak Connection</option>
+               <option value="Damaged Wire">Damaged Wire</option>
+               <option value="Other">Other</option>
                </select>
+               <div id="div1">Other Problem: <input type="text" class="form-control" placeholder="Other problem please write here..." name="nature"/></div>
                <span class="text-danger">{{ $errors->first('nature') }}</span>
           </div>
           <div class="form-group">
