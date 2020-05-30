@@ -30,7 +30,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header" style="background:rgba(255, 140, 0, 0.7);color:darkorange">
+                <div class="card-header" style="background:rgba(36, 139, 139, 0.699);">
                 <h1 style="text-align:center; font-family:calibri; color:white;">COMPLAINT FORM</h1>
                 </div>
 
