@@ -11,14 +11,6 @@
 </div>
 @endsection
 @section('content')
-<header class="site-navbar js-sticky-header site-navbar-target" role="banner">
-        <div class="container">
-          <br>        
-          @include('partials._nav')
-        </div>     
-      </header>
-<br>
-<br>
             
 <div class="container space-login">
     <div class="row justify-content-center">
