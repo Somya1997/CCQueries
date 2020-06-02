@@ -45,7 +45,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('complaints.store') }}" method="POST">
+        <form action="{{ route('complaints.store') }}" method="POST">
                     @csrf
           <div class="form-group">    
               <label for="name">Name:</label>
@@ -70,6 +70,16 @@
               <span class="text-danger">{{ $errors->first('email') }}</span>
           </div>
           <div class="form-group">
+              <label for="hostel">Hostel:</label>
+              <input type="text" class="form-control" name="hostel" id="hostel"/>
+              <span class="text-danger">{{ $errors->first('hostel') }}</span>
+          </div>
+          <div class="form-group">
+              <label for="room">Room No.:</label>
+              <input type="text" class="form-control" name="room" id="room"/>
+              <span class="text-danger">{{ $errors->first('room') }}</span>
+          </div>
+          <div class="form-group">
                <label for="nature">Nature of Problem</label>
                <select class="form-control" name="nature" id="nature" onchange="showfield(this.options[this.selectedIndex].value)">
                <option selected="selected">Choose...</option>
@@ -81,16 +91,6 @@
                </select>
                <div id="div1">Other Problem: <input type="text" class="form-control" placeholder="Other problem please write here..." name="nature"/></div>
                <span class="text-danger">{{ $errors->first('nature') }}</span>
-          </div>
-          <div class="form-group">
-              <label for="hostel">Hostel:</label>
-              <input type="text" class="form-control" name="hostel" id="hostel"/>
-              <span class="text-danger">{{ $errors->first('hostel') }}</span>
-          </div>
-          <div class="form-group">
-              <label for="room">Room No.:</label>
-              <input type="text" class="form-control" name="room" id="room"/>
-              <span class="text-danger">{{ $errors->first('room') }}</span>
           </div>
           <div class="form-group">
               <label for="availabletime">Availability Time:</label>
