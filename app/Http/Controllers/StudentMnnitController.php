@@ -6,6 +6,7 @@ use App\StudentMnnit;
 use App\ComplaintMnnit;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Session;
 
 class StudentMnnitController extends Controller
 {
@@ -82,7 +83,9 @@ class StudentMnnitController extends Controller
 
         $complaintMnnit->save();
 
-        return redirect()->route('complaints.show',$studentMnnit->id)->with('success', 'Complaint Registered Successfully');
+        Session::flash('success', 'Complaint Registered successfully!');
+
+        return redirect()->route('complaints.show',$studentMnnit->id);
 
 
     }
@@ -93,9 +96,10 @@ class StudentMnnitController extends Controller
      * @param  \App\StudentMnnit  $studentMnnit
      * @return \Illuminate\Http\Response
      */
-    public function show(StudentMnnit $studentMnnit)
+    public function show($id)
     {
-        //
+        $studentMnnit = StudentMnnit::find($id);
+        return view('complaints.show')->withStudentMnnit($studentMnnit); 
     }
 
     /**
