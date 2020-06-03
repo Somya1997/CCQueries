@@ -82,7 +82,7 @@ class StudentMnnitController extends Controller
 
         $complaintMnnit->save();
 
-        return redirect()->route('complaints.show',$studentMnnit->id)->with('success', 'Complaint Registered Successfully');
+        return redirect()->route('complaints.create')->with('success', 'Complaint Registered Successfully and your complaint id is: ')->withId($studentMnnit->id);
 
 
     }

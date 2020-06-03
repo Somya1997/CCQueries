@@ -23,11 +23,22 @@
             }
         </script>
         <body onload="hidefield()">
-        
+    @if(Session::has('success'))
+    <div class="alert-box alert-success">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{ Session::get('success') }}
+                    {{Session::get('id') }}
+                    @php
+                    Session::forget('success');
+                     @endphp
+                    </div>
+                @endif
+                
 
             
 <div class="container space-login">
     <div class="row justify-content-center">
+    
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header" style="background:rgba(36, 139, 139, 0.699);">
@@ -36,14 +47,7 @@
 
                 <div class="card-body">
 
-                @if(Session::has('success'))
-                    <div class="alert alert-success">
-                    {{ Session::get('success') }}
-                    @php
-                    Session::forget('success');
-                     @endphp
-                    </div>
-                @endif
+             
 
         <form action="{{ route('complaints.store') }}" method="POST">
                     @csrf
