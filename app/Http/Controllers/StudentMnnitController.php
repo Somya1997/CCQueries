@@ -74,7 +74,7 @@ class StudentMnnitController extends Controller
         $complaintMnnit = new ComplaintMnnit;
 
         $complaintMnnit->student_id     =$studentMnnit->id;
-        $complaintMnnit->nature         =$request->nature;
+        $complaintMnnit->nature= $request->other == null? $request->nature: $request->other;
         $complaintMnnit->availabletime  =$request->availabletime;
         $complaintMnnit->availabledate  =$request->availabledate;
         $complaintMnnit->staff          =$request->staff;

@@ -89,7 +89,7 @@
                <option value="Damaged Wire">Damaged Wire</option>
                <option value="Other">Other</option>
                </select>
-               <div id="div1">Other Problem: <input type="text" class="form-control" placeholder="Other problem please write here..." name="nature"/></div>
+               <div id="div1">Other Problem: <input type="text" class="form-control" placeholder="Other problem please write here..." name="other"/></div>
                <span class="text-danger">{{ $errors->first('nature') }}</span>
           </div>
           <div class="form-group">
