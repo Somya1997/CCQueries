@@ -23,7 +23,7 @@
             }
         </script>
         <body onload="hidefield()">
-    @if(Session::has('success'))
+    <!-- @if(Session::has('success'))
     <div class="alert-box alert-success">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     {{ Session::get('success') }}
@@ -33,7 +33,7 @@
                      @endphp
                     </div>
                 @endif
-                
+                 -->
 
             
 <div class="container space-login">
@@ -116,4 +116,5 @@
         </div>
     </div>
 </div>
+</body>
 @endsection
