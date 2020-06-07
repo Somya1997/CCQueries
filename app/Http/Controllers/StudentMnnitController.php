@@ -83,7 +83,7 @@ class StudentMnnitController extends Controller
 
         $complaintMnnit->save();
 
-        Session::flash('success', 'Complaint Registered successfully!');
+        Session::flash('success', 'Complaint Registered successfully rith complaint id: ');
 
         return redirect()->route('complaints.show',$studentMnnit->id);
 

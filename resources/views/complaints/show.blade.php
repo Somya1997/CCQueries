@@ -1,5 +1,5 @@
 @extends('main')
-@section('heading')
+<!-- @section('heading')
 <div class="top-bar">
     <div class="container">
       <div class="row">
@@ -9,7 +9,7 @@
         </div>
       </div>
 </div>
-@endsection
+@endsection -->
 @section('content')
 <div class="container px-1 px-md-4 py-5 mx-auto">
     <div class="card">
