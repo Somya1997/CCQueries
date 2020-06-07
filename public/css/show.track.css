@@ -1,16 +1,9 @@
-body {
-    color: #000;
-    overflow-x: hidden;
-    height: 100%;
-    background-color: #8C9EFF;
-    background-repeat: no-repeat
-}
 
 .card {
     z-index: 0;
     background-color: #ECEFF1;
     padding-bottom: 20px;
-    margin-top: 90px;
+    margin-top: 10px;
     margin-bottom: 90px;
     border-radius: 10px
 }
@@ -22,7 +15,7 @@ body {
 }
 
 #progressbar {
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     overflow: hidden;
     color: #455A64;
     padding-left: 0px;
@@ -39,9 +32,24 @@ body {
 }
 
 #progressbar .step0:before {
+    content: "\f022";
     font-family: FontAwesome;
-    content: "\f10c";
-    color: #fff
+    color: #FF8C00;
+}
+#progressbar .step1:before {
+    content: "\f007";
+    font-family: FontAwesome;
+    color: #FF8C00;
+}
+#progressbar .step2:before {
+    content: "\f05d";
+    font-family: FontAwesome;
+    color: #FF8C00;
+}
+#progressbar .step3:before {
+    content: "\f015";
+    font-family: FontAwesome;
+    color: #FF8C00;
 }
 
 #progressbar li:before {
@@ -98,22 +106,22 @@ body {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #1fff1f
+    background: #248a8a
 }
 
 #progressbar li.active:before {
-    font-family: FontAwesome;
     content: "\f00c"
+    font-family: FontAwesome;
 }
 
 .icon {
     width: 60px;
     height: 60px;
-    margin-right: 15px
+    margin-right: 10px
 }
 
 .icon-content {
-    padding-bottom: 20px
+    padding-bottom: 50px
 }
 
 @media screen and (max-width: 992px) {

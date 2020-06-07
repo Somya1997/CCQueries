@@ -13,22 +13,22 @@
 @section('content')
 <div class="container px-1 px-md-4 py-5 mx-auto">
     <div class="card">
-        <div class="row d-flex justify-content-between px-3 top">
+        <div class="row d-flex justify-content-around px-3 top">
             <div class="d-flex">
-                <h5>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;COMPLAINT NUMBER <span class="text-primary font-weight-bold">#{{$studentMnnit->id}}</span></h5>
+                <h5>COMPLAINT NUMBER <span class="text-primary font-weight-bold">#{{$studentMnnit->id}}</span></h5>
             </div>
-            <div class="d-flex flex-column text-sm-right">
-                <p class="mb-0"><h5>NAME<span class="text-primary font-weight-bold mr-5">#{{$studentMnnit->name}}</span></h5></p>
-                <p class="mb-0"><h5>REGISTRATION No.<span class="text-primary font-weight-bold mr-5">#{{$studentMnnit->regno}}</span></h5></p>
+            <div class="d-flex flex-row text-sm-right">
+                <p class="mb-0"><h5><span class="text-primary font-weight-bold mr-7">{{$studentMnnit->name}}</span></h5></p>
+                <p class="mb-0"><h5><span class="text-primary font-weight-bold mr-3">-{{$studentMnnit->regno}}</span></h5></p>
             </div>
         </div> <!-- Add class 'active' to progress -->
         <div class="row d-flex justify-content-center">
             <div class="col-12">
                 <ul id="progressbar" class="text-center">
                     <li class="active step0"></li>
-                    <li class="active step0"></li>
-                    <li class="active step0"></li>
-                    <li class="step0"></li>
+                    <li class="active step1"></li>
+                    <li class="active step2"></li>
+                    <li class="step3"></li>
                 </ul>
             </div>
         </div>
@@ -56,7 +56,7 @@
         </div>
         <form action="#">
             <div class="form-group d-flex text-center">
-              <div class="col-12"><a href="{{url('/')}}" class="btn btn-success btn-lg text-white px-5">HOME</a></div>
+              <div class="col-12"><a href="{{url('/')}}" class="btn btn-primary btn-lg font-weight-bold text-white px-5">HOME</a></div>
             </div>
           </form>
     </div>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ URL::asset('fonts/flaticon/font/flaticon.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/aos.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/show.track.css') }}">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" type="text/css">
