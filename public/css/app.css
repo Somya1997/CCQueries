@@ -4455,6 +4455,13 @@ input[type=button].btn-block {
   padding: 0.5rem 1rem;
 }
 
+#navbarDropdown
+{
+  color:#3490dc;
+  font-size: 200%;
+  font-weight: 500;
+  margin-top:2%;
+}
 .nav-link:hover,
 .nav-link:focus {
   text-decoration: none;
@@ -4469,6 +4476,7 @@ input[type=button].btn-block {
 .nav-tabs {
   border-bottom: 1px solid #dee2e6;
 }
+
 
 .nav-tabs .nav-item {
   margin-bottom: -1px;
@@ -4983,12 +4991,22 @@ input[type=button].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color:white;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  
+  /* font-size:25px; */
 }
 
+/* .card .row{
+  height:10%;
+}
+.card .txtfield{
+  background-clip: border-box;
+  border: 1.5px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+} */
 .card > hr {
   margin-right: 0;
   margin-left: 0;

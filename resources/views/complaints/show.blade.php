@@ -10,7 +10,7 @@
       </div>
 </div>
 @endsection -->
-@section('content')
+@section('body')
 <div class="container px-1 px-md-4 py-5 mx-auto">
     <div class="card">
         <div class="row d-flex justify-content-around px-3 top">

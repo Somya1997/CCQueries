@@ -1,5 +1,5 @@
 @extends('main')
-@section('content')
+@section('body')
 <br>
 <br>
 <div class="container">

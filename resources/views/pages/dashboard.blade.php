@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('content')
+@section('body')
 
         <!-- MENU SIDEBAR-->
         @include('partials._sidebar')
@@ -14,17 +14,14 @@
                     <h1 style="text-align:center; font-family:arial; color:darkorange">CC QUERIES</h1>     
                 </div>
             </header> -->
-            <nav class="navbar navbar-expand-md bg-white ">
-                <div class="container">
-                <!-- <h1 style="text-align:center; font-family:arial; color:darkorange">CC QUERIES</h1> -->
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
-                        <h1 style="text-align:center; font-family:arial; color:darkorange">CC QUERIES</h1>
-                        </ul>
-
-                        <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
+            <div class="top-bar">
+            <div class="container">
+            <div class="row">
+                <div class="col-6 text-left ml-auto ">
+                    <h2 style="font-size: 300%;color:darkorange;margin-top:3%"> CC QUERIES</h2>
+                </div>
+                <div class="col-6 text-right ml-auto">
+                <ul class="navbar-nav ml-auto">
                             <!-- Authentication Links -->
                         
                                 <li class="nav-item dropdown">
@@ -53,9 +50,10 @@
                                     </div>
                                 </li>
                         </ul>
-                    </div>
                 </div>
-            </nav>
+            </div>
+            </div>
+        </div>
             <!-- END HEADER DESKTOP-->
             <!-- MAIN CONTENT-->
             <div class="main-content">
