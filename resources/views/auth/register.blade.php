@@ -5,7 +5,7 @@
     @yield('title')
   </head>
   <!-- style="background-image:url('../images/net-1.jpg');background-repeat:no-repeat;background-size: cover;" -->
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300"style="background-image:url('../images/net-1.jpg');background-repeat:no-repeat;background-size: cover;">
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
   
 <div class="top-bar">
@@ -24,11 +24,7 @@
 </div>
 
 
-<<<<<<< HEAD
-  
-=======
   <div class="back-cover" style="background-image:url('../images/cc2.jpg');">
->>>>>>> 94c66ad547eb8ca7ba2bd849abfffd9db6332e4c
 <div class="container" >
     <br>
     <br> <br>
