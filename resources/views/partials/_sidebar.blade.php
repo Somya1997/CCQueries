@@ -1,7 +1,7 @@
 <aside class="menu-sidebar d-none d-lg-block">
-            <div class="site-logo" style="margin-left: 45px; margin-top: 20px;">
+            <div class="site-logo" style="margin-left: 10%; margin-top: 2%;">
                 <a class="navbar-brand" href="{{ url('/dashboard')}}" >
-                    <img src="images/logonew1.png" width="150px" height ="150px" alt="MNNIT"/>
+                    <img src="images/logonew1.png" width="90%" height ="90%" alt="MNNIT"/>
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">

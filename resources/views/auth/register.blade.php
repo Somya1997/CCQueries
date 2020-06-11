@@ -5,7 +5,9 @@
     @yield('title')
   </head>
   <!-- style="background-image:url('../images/net-1.jpg');background-repeat:no-repeat;background-size: cover;" -->
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" >
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300"style="background-image:url('../images/net-1.jpg');background-repeat:no-repeat;background-size: cover;">
+
+  
 <div class="top-bar">
     <div class="container">
       <div class="row">
@@ -22,7 +24,7 @@
 </div>
 
 
-  <div class="ftco-cover-1 overlay" style="background-image:url('../images/cc2.jpg');">
+  
 <div class="container" >
     <br>
     <br> <br>
@@ -89,7 +91,7 @@
         </div>
     </div>
 </div>
-</div>
+
 
 
 @include('partials._script')
