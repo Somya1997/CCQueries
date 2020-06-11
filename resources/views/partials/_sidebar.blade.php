@@ -1,5 +1,5 @@
 <aside class="menu-sidebar d-none d-lg-block">
-            <div class="site-logo" style="margin-left: 10%; margin-top: 2%;">
+            <div class="site-logo" style="margin-left: 45px; margin-top: 10px;">
                 <a class="navbar-brand" href="{{ url('/dashboard')}}" >
                     <img src="images/logonew1.png" width="90%" height ="90%" alt="MNNIT"/>
                 </a>
