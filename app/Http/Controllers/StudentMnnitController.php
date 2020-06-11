@@ -56,8 +56,8 @@ class StudentMnnitController extends Controller
             'hostel.required' => 'Hostel Name is required',
             'room.required' => 'Room Number is required',
             'nature.required' => 'Nature of Problem is required',
-            'availabletime.required' => 'Time of Availabelity is required',
-            'availabledate.required' => 'Date of Availabelity is required'
+            'availabletime.required' => 'Time of Availability is required',
+            'availabledate.required' => 'Date of Availability is required'
 
         ]);
 
@@ -83,7 +83,7 @@ class StudentMnnitController extends Controller
 
         $complaintMnnit->save();
 
-        Session::flash('success', 'Complaint Registered successfully rith complaint id: ');
+        Session::flash('success', 'Complaint Registered successfully with complaint id: ');
 
         return redirect()->route('complaints.show',$studentMnnit->id);
 

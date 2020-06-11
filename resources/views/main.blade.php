@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     @include('partials._head')
-    @yield('title')
+    <!-- @yield('title') -->
   </head>
 
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">

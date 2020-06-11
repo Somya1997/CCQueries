@@ -1,15 +1,16 @@
 @extends('main')
+
 @section('heading')
 <div class="top-bar">
     <div class="container">
       <div class="row">
         <div class="col-6">
             <div class="site-logo">
-                <a href="{{url('/')}}"><img src="../images/logonew1.png" alt=" " width="40%" height="2%"></a>
+                <a href="{{url('/')}}"><img src="../images/logonew1.png" alt=" " width="50%" height="2%"></a>
             </div>
         </div>
         <div class="col-6 text-right ml-auto ">
-            <h2 style="font-size: 300%;color:darkorange;margin-top:3%"> CC QUERIES</h2>
+            <h2 style="font-size: 400%;color:darkorange;margin-top:3%"> CC QUERIES</h2>
         </div>
       </div>
     </div>
@@ -17,8 +18,9 @@
 @endsection
 
 @section('body')
-
-<div class="container space-login">
+<div class="back-cover" style="background-image:url('../images/cc2.jpg');">
+<div class="container ">
+    <br> <br> <br>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -78,9 +80,15 @@
                             </div>
                         </div>
                     </form>
+                    
                 </div>
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
 </div>
+</div>
+
 @endsection

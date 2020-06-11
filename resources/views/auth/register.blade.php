@@ -1,13 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    @include('partials._head')
-    @yield('title')
-  </head>
-  <!-- style="background-image:url('../images/net-1.jpg');background-repeat:no-repeat;background-size: cover;" -->
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+@extends('main')
 
-  
+@section('heading')
 <div class="top-bar">
     <div class="container">
       <div class="row">
@@ -22,14 +15,15 @@
       </div>
     </div>
 </div>
+@endsection
 
-
+@section('body')
   <div class="back-cover" style="background-image:url('../images/cc2.jpg');">
 <div class="container" >
     <br>
     <br> <br>
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-8">
             
     <div class="card">
         
@@ -92,8 +86,4 @@
     </div>
 </div>
 
-
-
-@include('partials._script')
-</body>
-</html>
+@endsection

@@ -5,11 +5,11 @@
       <div class="row">
         <div class="col-6">
             <div class="site-logo">
-                <a href="{{url('/')}}"><img src="../images/logonew1.png" alt=" " width="40%" height="2%"></a>
+                <a href="{{url('/')}}"><img src="../images/logonew1.png" alt=" " width="50%" height="2%"></a>
             </div>
         </div>
         <div class="col-6 text-right ml-auto ">
-            <h2 style="font-size: 300%;color:darkorange;margin-top:3%"> CC QUERIES</h2>
+            <h2 style="font-size: 400%;color:darkorange;margin-top:3%"> CC QUERIES</h2>
         </div>
       </div>
     </div>
@@ -41,7 +41,10 @@
                 @endif
                  -->
 
-            
+<div class="back-cover" style="background-image:url('../images/cc2.jpg');">  
+<br>
+<br>
+<br>         
 <div class="container">
     <div class="row justify-content-center">
     
@@ -122,5 +125,8 @@
         </div>
     </div>
 </div>
+<br>
+<br>
+        </div>
 </body>
 @endsection
