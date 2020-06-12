@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('content')
+@section('body')
 
         <!-- MENU SIDEBAR-->
         @include('partials._sidebar')

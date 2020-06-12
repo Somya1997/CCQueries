@@ -3,14 +3,20 @@
 <div class="top-bar">
     <div class="container">
       <div class="row">
-          <div class="col-12">
-            <center><h2 style="font-size: 50px;color:darkorange"> CC QUERIES</h2></center>
-          </div>
+        <div class="col-6">
+            <div class="site-logo">
+                <a href="{{url('/')}}"><img src="../images/logonew1.png" alt=" " width="50%" height="2%"></a>
+            </div>
+        </div>
+        <div class="col-6 text-right ml-auto ">
+            <h2 style="font-size: 400%;color:darkorange;margin-top:3%"> CC QUERIES</h2>
         </div>
       </div>
+    </div>
 </div>
 @endsection
-@section('content')
+
+@section('body')
 
         <script type="text/javascript">
             function showfield(name){
@@ -35,13 +41,16 @@
                 @endif
                  -->
 
-            
+<div class="back-cover" style="background-image:url('../images/cc2.jpg');">  
+<br>
+<br>
+<br>         
 <div class="container">
     <div class="row justify-content-center">
     
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header" style="background:rgba(36, 139, 139, 0.699);">
+                <div class="card-header" style="background:#3da1f3">
                 <h1 style="text-align:center; font-family:calibri; color:white;">COMPLAINT FORM</h1>
                 </div>
 
@@ -116,5 +125,8 @@
         </div>
     </div>
 </div>
+<br>
+<br>
+        </div>
 </body>
 @endsection
