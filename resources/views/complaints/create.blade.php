@@ -50,7 +50,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header" style="background:darkorange">
-                <h1 style="text-align:center; font-family:calibri; color:white;">COMPLAINT FORM</h1>
+                <h1 style="text-align:center; font-weight:400; font-style:arial; color:white;">COMPLAINT FORM</h1>
                 </div>
 
                 <div class="card-body">

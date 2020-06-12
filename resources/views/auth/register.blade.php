@@ -27,8 +27,8 @@
             
     <div class="card">
         
-        <div class="card-header" style="background:#3da1f3">
-                <h1 style="text-align:center; font-weight:400; color:white;">REGISTER</h1>
+        <div class="card-header" style="background:darkorange">
+                <h1 style="text-align:center; font-weight:400; font-style:arial; color:white;">REGISTER</h1>
                 </div>
         <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -73,7 +73,7 @@
                         </div>
                 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-3">
+                            <div class="col-md-4 offset-md-4">
                                 <button type="submit" class="btn btn-primary btn-block">
                                     {{ __('Register') }}
                                 </button>
