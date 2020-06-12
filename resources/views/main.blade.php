@@ -24,8 +24,6 @@
       
       @yield('heading')
       @yield('body')
-    
-      @yield('content')
   
     @include('partials._script')
 

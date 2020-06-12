@@ -15,7 +15,8 @@
     </div>
 </div>
 @endsection
-@section('content')
+@section('body')
+
         <div class="content">
 	        <div class="content1">
 		        <h2>Complaint Tracking</h2>
