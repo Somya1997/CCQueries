@@ -43,14 +43,13 @@
 
 <div class="back-cover" style="background-image:url('../images/cc2.jpg');">  
 <br>
-<br>
-<br>         
+<br>       
 <div class="container">
     <div class="row justify-content-center">
     
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header" style="background:#3da1f3">
+                <div class="card-header" style="background:darkorange">
                 <h1 style="text-align:center; font-family:calibri; color:white;">COMPLAINT FORM</h1>
                 </div>
 
