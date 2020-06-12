@@ -19,7 +19,7 @@ class CreateComplaintMnnitsTable extends Migration
             $table->string('nature');
             $table->time('availabletime');
             $table->date('availabledate');
-            $table->string('staff')->nullable;
+            $table->string('staff')->default(0);
             $table->integer('status')->default(0);
             $table->timestamps();
         });

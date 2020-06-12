@@ -25,7 +25,6 @@
       @yield('heading')
       @yield('body')
     
-      @include('partials._messages')
       @yield('content')
   
     @include('partials._script')

@@ -70,7 +70,7 @@
           </div>
           <div class="form-group">
               <label for="email">Email:</label>
-              <input type="email" class="form-control" name="email" id="email"/>
+              <input type="email" class="form-control" name="email" id="email" placeholder="We will mail your Complaint number...."/>
               <span class="text-danger">{{ $errors->first('email') }}</span>
           </div>
           <div class="form-group">
@@ -97,15 +97,15 @@
                <span class="text-danger">{{ $errors->first('nature') }}</span>
           </div>
           <div class="form-group">
-              <label for="availabletime">Availability Time:</label>
-              <input type="time" class="form-control" name="availabletime" id="availabletime"/>
-              <span class="text-danger">{{ $errors->first('availabletime') }}</span>
-          </div>
-          <div class="form-group">
               <label for="availabledate">Availability Date:</label>
               <input type="date" class="form-control" name="availabledate" id="availabledate"/>
               <span class="text-danger">{{ $errors->first('availabledate') }}</span>
-          </div>           
+          </div> 
+          <div class="form-group">
+              <label for="availabletime">Availability Time:</label>
+              <input type="time" class="form-control" name="availabletime" id="availabletime" value="09:00"/>
+              <span class="text-danger">{{ $errors->first('availabletime') }}</span>
+          </div>          
           <div class="form-group">              
               <button type="submit" class="btn btn-primary btn-block">Submit</button>
           </div>

@@ -18,7 +18,7 @@ class CreateStudentMnnitsTable extends Migration
             $table->string('name');
             $table->string('regno');
             $table->string('email');
-            $table->integer('phoneno');
+            $table->bigInteger('phoneno');
             $table->string('hostel');
             $table->integer('room');
             

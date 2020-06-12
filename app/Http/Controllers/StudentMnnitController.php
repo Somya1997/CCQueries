@@ -42,7 +42,7 @@ class StudentMnnitController extends Controller
             'name' => 'required|max:20',
             'regno' => 'required',
             'email' => 'required|email',
-            'phoneno' =>'required|digits:10|numeric',
+            'phoneno' =>'required|digits:10|numeric|regex:/^([0-9\s\-\+\(\)]*)$/',
             'hostel' =>'required|max:20',
             'room' =>'required|numeric',
             'nature' =>'required|max:50|string',
