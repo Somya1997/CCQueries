@@ -39,34 +39,34 @@
                                 <img src="../images/confirm.png" alt="confirm order">
             	        </div>
 				        <span class="line"></span>
-				        <p>Confirmed Order</p>
+				        <p>Complaint Registered</p>
 			        </div>
 			        <div class="process">
            	 	        <div class="imgcircle">
                 	            <img src="../images/process.png" alt="process order">
             	        </div>
 				        <span class="line"></span>
-				        <p>Processing Order</p>
+				        <p>Processing</p>
 			        </div>
 			        <div class="quality">
 				        <div class="imgcircle">
                 	            <img src="../images/quality.png" alt="quality check">
             	        </div>
 				        <span class="line"></span>
-				        <p>Quality Check</p>
+				        <p>Staff Assigned</p>
 			        </div>
 			        <div class="dispatch">
 				        <div class="imgcircle">
                 	            <img src="../images/dispatch.png" alt="dispatch product">
             	        </div>
 				        <span class="line"></span>
-				        <p>Dispatched Item</p>
+				        <p>staff close the complaint</p>
 			        </div>
 			        <div class="delivery">
 			    	    <div class="imgcircle">
                 	            <img src="../images/delivery.png" alt="delivery">
 				        </div>
-				        <p>Product Delivered</p>
+				        <p>Complaint completed</p>
 			       </div>
 			            <div class="clear"></div>
 	        	</div>
