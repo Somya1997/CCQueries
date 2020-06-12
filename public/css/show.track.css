@@ -1,8 +1,8 @@
 
 
 body {
-	margin:0;
-	padding:0;
+	background-image: url('../images/cc2.jpg');
+	background-image: linear-gradient(#97c9f1d7, #027adbe8);
 	font-family: 'Open Sans', sans-serif;
 }
 .clear {
@@ -26,7 +26,7 @@ body {
 	background-color:#F5F5F5;
 }
 .content1 {
-	background-color:#248a8a;
+	background-color:#3da1f3;
 	text-align:center;
 	padding:2em;
 }
@@ -37,7 +37,7 @@ body {
 	color:#fff;
 }
 .content2 {
-	background-color:#2fa0a0c0;
+	background-color:#97c9f1d7;
 }
 .content2-header1 {
 	float:left;
@@ -50,7 +50,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-size:18px;
 	font-weight:700;
-	color:#258e8c;
+	color:#0c4574;
 	margin:0;
 }
 .content2-header1 span {
