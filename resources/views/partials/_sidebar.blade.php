@@ -9,11 +9,19 @@
                     <ul class="list-unstyled navbar__list">
                         <li class="active">
                             <a href="table.html">
-                                <i class="fas fa-table"></i>Pending Complaints</a>
+                                New Complaints</a>
                         </li>
+                        @if(Auth::user()->name=='Admin')
+                        
+                        <li class="active">
+                            <a href="table.html">
+                                Review Complaints</a>
+                        </li>
+                        
+                        @endif
                         <li>
                             <a href="form.html">
-                                <i class="far fa-check-square"></i>Closed Complaints</a>
+                                Closed Complaints</a>
                         </li>
                        
                 </nav>

@@ -1,3 +1,4 @@
+@Auth
 @extends('main')
 
 @section('heading')
@@ -87,3 +88,6 @@
 </div>
 
 @endsection
+@else
+<div class="container"> Not Logged in</div>
+@endAuth

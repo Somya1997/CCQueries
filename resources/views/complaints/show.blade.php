@@ -15,7 +15,7 @@
     </div>
 </div>
 @endsection
-@section('content')
+@section('body')
 <div class="back-cover" style="background-image:url('../images/cc2.jpg');">  
 <br>
 <div class="container1">
