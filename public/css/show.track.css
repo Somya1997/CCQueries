@@ -1,17 +1,10 @@
-
-
 .clear {
 	clear:both;
 }
-.container1 {
-	margin-top:0%;
-	width:100%;
-	text-align:center;
-}
 .card1{
 	width:110%;
-	margin:3% auto 0 auto;
-	height:400px;
+	margin:3%;
+	height:93%;
 	background-color:#F5F5F5;
 }
 .card-header1 {
@@ -68,7 +61,7 @@ span.line {
 	margin-left:-50%;
 	font-size:15px;
 	font-weight:600;
-} 
+}
 .imgcircle {
 	height:80px;
 	width:80px;
@@ -107,7 +100,14 @@ span.line {
 	float:left;
 	margin-right:-9%;
 }
-
+.content4 {
+	background-color:#F5F5F5;
+}
+.content4-header1 {
+	float:left;
+	width:30%;
+	padding:1em;
+}
 
 /*---- responsive-design -----*/
 @media(max-width:1920px){
@@ -116,13 +116,12 @@ span.line {
 	left:32%;
 	}
 	.shipment{
-		margin-top:4%;
+		margin-top:10%;
 	}
 .content3 p{
 margin-left:-65%;
 }
 }
-
 @media(max-width:1680px){
 	.content3 p {
     margin-left: -60%;
