@@ -1,70 +1,48 @@
-
-
-
 .clear {
 	clear:both;
 }
-.header {
-	margin-top:2%;
-	width:100%;
-	text-align:center;
-}
-.header h1 {
-	font-family: 'Open Sans', sans-serif;
-	line-height:25px;
-	text-transform:uppercase;
-	color:grey;
-}
-.content{
-	width:60%;
-	margin:3% auto 0 auto;
-	height:460px;
+.card1{
+	width:110%;
+	margin:3%;
+	height:93%;
 	background-color:#F5F5F5;
 }
-.content1 {
-	background-color:#3da1f3;
+.card-header1 {
+	background-color:darkorange;
+	text-transform:uppercase;
 	text-align:center;
 	padding:2em;
 }
-.content1 h2 {
-	font-family: 'Open Sans', sans-serif;
-	text-transform:uppercase;
-	margin:0;
-	color:#fff;
-}
 .content2 {
-	background-color:#97c9f1d7;
+	background-color:rgba(255, 140, 0, 0.651);
 }
 .content2-header1 {
 	float:left;
-	width:27%;
+	width:30%;
 	text-align:center;
-	padding:1.5em;
+	padding:1em;
 }
 .content2-header1 p {
 	text-transform:uppercase;
 	font-family: 'Open Sans', sans-serif;
 	font-size:18px;
 	font-weight:700;
-	color:#0c4574;
+	color:rgb(150, 82, 0);
 	margin:0;
 }
-.content2-header1 span {
-	font-size:14px;
-	font-weight:400;
-}
 .shipment {
-	width:100%;
+	width:86%;
 	margin-top:10%;
+	text-align:center;
 }
 span.line {
     height: 5px;
-    width: 90px;
-    background-color:#F5998E;
+    width: 100px;
+    background-color:rgba(245, 152, 142, 0.76);
     display: block;
     position: absolute;
     top: 28%;
-    left: 45%;
+    left: 10%;
 }
 .confirm{
 	text-align:center;
@@ -83,10 +61,10 @@ span.line {
 	margin-left:-50%;
 	font-size:15px;
 	font-weight:600;
-} 
+}
 .imgcircle {
-	height:75px;
-	width:75px;
+	height:80px;
+	width:80px;
 	border-radius:50%;
 	background-color:#F5998E;
 	position:relative;
@@ -122,42 +100,28 @@ span.line {
 	float:left;
 	margin-right:-9%;
 }
-.footer a, a:active {
-	color:grey;
-	text-decoration:none;
-	font-family: 'Tahoma', sans-serif;
+.content4 {
+	background-color:#F5F5F5;
 }
-.footer a:hover {
-	color:#00c4ff;
-	text-decoration:none;
-	transition:all 0.5s ease-in-out;
-}
-.footer {
-	margin-top:3%;
-	text-align:center;
-	font-weight:100;
-}
-.footer p {
-	color:grey;
-	font-size:15px;
-	font-family: 'Tahoma', sans-serif;
-	line-height:25px;
+.content4-header1 {
+	float:left;
+	width:30%;
+	padding:1em;
 }
 
 /*---- responsive-design -----*/
 @media(max-width:1920px){
 	span.line {
 	width:157px;
-	left:32%;
+	/* left:32%; */
 	}
 	.shipment{
-		margin-top:6%;
+		margin-top:10%;
 	}
 .content3 p{
 margin-left:-65%;
 }
 }
-
 @media(max-width:1680px){
 	.content3 p {
     margin-left: -60%;
