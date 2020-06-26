@@ -19,7 +19,7 @@
 <div class="back-cover" style="background-image:url('../images/cc2.jpg');">  
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-md-8">
+			<div class="col-md-10 offset-md-1">
 				<div class="card1">
 					<div class="card-header1" style="background:darkorange">
 							<h1 style="text-align:center; font-family:calibri; color:white;">COMPLAINT TRAKING</h1>
