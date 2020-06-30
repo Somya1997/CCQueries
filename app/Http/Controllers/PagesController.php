@@ -17,7 +17,7 @@ class PagesController extends Controller
     {
         if(Auth::user()->name=='Admin')
         {
-            $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id') ->where('status','=',0)->get();
+            $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id') ->where('status','=',0)->latest()->paginate(2);
         }
         else
         {

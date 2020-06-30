@@ -60,35 +60,40 @@
                                                 <th>Registration No</th>
                                                 <th>Address</th>
                                                 <th>Contact</th>
-                                                <th>Availability</th>
+                                                <th>Available date</th>
+                                                <th>Available time</th>
                                                 <th>Nature Of Problem</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($complaints as $complaint)
                                                 <tr>
-                                                <th>{{$complaint->student_id}}</th>
+                                                <td>{{$complaint->student_id}}</td>
                                                 <td>{{$complaint->name}}</td>
                                                 <td>{{$complaint->regno}}</td>
                                                 <td>{{$complaint->hostel}}, Room No. {{$complaint->room}}</td>
                                                 <td>{{$complaint->phoneno}}</td>
-                                                <td>{{$complaint->availabledate}}   {{$complaint->availabletime}}</td>
+                                                <td>{{$complaint->availabledate}} </td>
+                                                <td>{{$complaint->availabletime}}</td>
                                                 <td>{{$complaint->nature}}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
+                                    <div class="text-center">
+                                        {{ $complaints->links() }}
+                                    </div>
                                 </div>
+                               
                                 <!-- END DATA TABLE-->
                             </div>
                         </div>
-                        <div class="row">
-                            
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
+    
 @stop

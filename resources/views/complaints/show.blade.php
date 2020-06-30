@@ -81,7 +81,7 @@
 									</div>
 								</div>
 								<form action="#">
-									<div class="form-group d-flex text-center">
+									<div class="form-group d-flex ">
 									<div class="col-12"><a href="{{url('/')}}" class="btn btn-primary btn-lg font-weight-bold text-white px-5">HOME</a></div>
 									</div>
 								</form>

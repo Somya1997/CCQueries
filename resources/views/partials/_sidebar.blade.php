@@ -12,7 +12,10 @@
                                 New Complaints</a>
                         </li>
                         @if(Auth::user()->name=='Admin')
-                        
+                        <li>
+                            <a href="{{route('complaints.update')}}">
+                                Assigned Complaints</a>
+                        </li>
                         <li>
                             <a href="table.html">
                                 Review Complaints</a>
