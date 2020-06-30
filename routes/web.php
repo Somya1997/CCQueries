@@ -19,5 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::resource('complaints', 'StudentMnnitController');
 Route::get('dashboard','PagesController@getDashboard');
 Route::get('/','PagesController@getIndex');
+Route::get('assigned','PagesController@getAssignedDashboard');
+Route::get('review','PagesController@getReviewDashboard');
+Route::get('closed','PagesController@getClosedDashboard');
 
 Auth::routes();

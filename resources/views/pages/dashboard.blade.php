@@ -71,7 +71,7 @@
                                                 <td>{{$complaint->student_id}}</td>
                                                 <td>{{$complaint->name}}</td>
                                                 <td>{{$complaint->regno}}</td>
-                                                <td>{{$complaint->hostel}}, Room No. {{$complaint->room}}</td>
+                                                <td>{{$complaint->hostel}}, Room No: {{$complaint->room}}</td>
                                                 <td>{{$complaint->phoneno}}</td>
                                                 <td>{{$complaint->availabledate}} </td>
                                                 <td>{{$complaint->availabletime}}</td>

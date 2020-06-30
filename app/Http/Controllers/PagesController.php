@@ -24,9 +24,42 @@ class PagesController extends Controller
         $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
         ->where('status','=',1)
         ->where('staff','=',Auth::user()->name)
-        ->get();
+        ->latest()->paginate(2);
         }
         return view('pages.dashboard')->withComplaints($complaints);
+    }
+    public function getAssignedDashboard()
+    {
+        $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
+        ->where('status','=',1)
+        ->latest()->paginate(2);
+        return view('pages.dashboard')->withComplaints($complaints);
+    }
+    public function getReviewDashboard()
+    {
+        $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
+        ->whereIn('status', ['-1', '2'])   //One way of checking two values in where clause
+        ->latest()->paginate(2);  
+        return view('pages.dashboard')->withComplaints($complaints); 
+    }
+    public function getClosedDashboard()
+    {
+        if(Auth::user()->name=='Admin')
+        {
+            $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
+            ->where('status','=',3)         // second way of checking two values in where clause
+            ->orWhere('status','=',-2)
+            ->latest()->paginate(2);  
+        }
+        else
+        {
+        $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
+        ->where('status','=',3)
+        ->orWhere('status','=',-2)
+        ->where('staff','=',Auth::user()->name)
+        ->latest()->paginate(2);  
+        }
+        return view('pages.dashboard')->withComplaints($complaints); 
     }
 
 }
