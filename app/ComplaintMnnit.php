@@ -15,7 +15,7 @@ class ComplaintMnnit extends Model
     public $status = false;
     public $staff = false;
 
-    public function student_mnnits()
+  public function student_mnnits()
   {
     return $this->belongsTo('App\StudentMnnit', 'id');
   }
