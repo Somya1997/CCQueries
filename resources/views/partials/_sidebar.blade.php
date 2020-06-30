@@ -13,12 +13,13 @@
                         </li>
                         @if(Auth::user()->name=='Admin')
                         
-                        <li class="active">
+                        <li>
                             <a href="table.html">
                                 Review Complaints</a>
                         </li>
                         
                         @endif
+
                         <li>
                             <a href="form.html">
                                 Closed Complaints</a>
