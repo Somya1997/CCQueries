@@ -19,18 +19,19 @@ class PagesController extends Controller
         if(Auth::user()->name=='Admin')
         {
             $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id') ->where('status','=',0)->latest()->paginate(2);
+            $staffs=User::where('name','!=','Admin')->get();
+            return view('pages.dashboard')->withComplaints($complaints)->withStaffs($staffs);
         }
         else
         {
-        $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
-        ->where('status','=',1)
-        ->where('staff','=',Auth::user()->name)
-        ->latest()->paginate(2);
+            $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
+            ->where('status','=',1)
+            ->where('staff','=',Auth::user()->name)
+            ->latest()->paginate(2);
+            return view('pages.dashboard')->withComplaints($complaints);
         }
-        if(Auth::user()->name=='Admin'){
-            $staffs=User::where('name','!=','Admin')->get();
-        }
-        return view('pages.dashboard')->withComplaints($complaints)->withStaffs($staffs);
+       
+        
     }
     public function getAssignedDashboard()
     {

@@ -12,8 +12,6 @@ class ComplaintMnnit extends Model
         'student_id', 'nature', 'availabletime', 'availabledate', 'staff', 'status'
     ];
     
-   
-
   public function student_mnnits()
   {
     return $this->belongsTo('App\StudentMnnit', 'id');

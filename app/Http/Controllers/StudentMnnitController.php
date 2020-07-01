@@ -18,12 +18,7 @@ class StudentMnnitController extends Controller
      */
     public function index()
     {
-        $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
-        ->where('status',3)
-        ->where('status',-2)
-        ->where('staff','=',Auth::user()->name)
-        ->latest()->paginate(2);
-        return view('pages.dashboard')->withComplaints($complaints);
+      //
     }
 
     /**
