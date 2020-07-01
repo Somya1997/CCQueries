@@ -22,5 +22,6 @@ Route::get('/','PagesController@getIndex');
 Route::get('assigned','PagesController@getAssignedDashboard');
 Route::get('review','PagesController@getReviewDashboard');
 Route::get('closed','PagesController@getClosedDashboard');
+Route::get('/actionedit/{id}', 'PagesController@actionedit');
 
 Auth::routes();

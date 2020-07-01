@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 use App\StudentMnnit;
 use App\ComplaintMnnit;
 use App\User;
-use Auth;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Auth;
+use Session;
+
 
 class PagesController extends Controller
 {
@@ -68,4 +70,23 @@ class PagesController extends Controller
         return view('pages.dashboard')->withComplaints($complaints); 
     }
 
+    public function actionedit(Request $request,ComplaintMnnit $complaintMnnit)
+    {
+            if(isset($_GET["success"]))
+            {
+                $complaint=ComplaintMnnit::where('student_id','=', $request->id)
+                            ->update(['status'=>2]);
+               
+                            Session::flash('success','successfully updated');
+            }
+            if(isset($_GET["fail"]))
+            {
+                $complaint=ComplaintMnnit::where('student_id','=', $request->id)
+                            ->update(['status'=>-1]);
+               
+                            Session::flash('success','successfully updated');
+            }
+            return redirect('dashboard');
+
+    }
 }

@@ -46,6 +46,22 @@
         <!-- END MENU SIDEBAR-->
             <!-- MAIN CONTENT-->
             <div class="main-content">
+            @if(Session::has('success'))
+    <div class="alert-box alert-success">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{ Session::get('success') }}
+                    {{Session::get('id') }}
+                    @php
+                    Session::forget('success');
+                     @endphp
+                    </div>
+                @else
+                <div class="alert-box alert-success">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                   error
+                    </div>
+                @endif
+                
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
@@ -71,6 +87,9 @@
                                                     @else
                                                         <th>Assigned Staff</th>
                                                     @endif
+                                                @else
+                                                   <th colspan="2"> Complaint Status </th>
+                                                   <!-- <th></th> -->
                                                 @endif
                                             </tr>
                                         </thead>
@@ -105,7 +124,10 @@
                                                             </td>
                                                         @else
                                                             <td>{{$complaint->staff}}</td>
+                                                            
                                                         @endif
+                                                    @else
+                                                    <td ><div class="btn-group"><a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?success" type="submit" name="success" id="success">Success</a> &nbsp; &nbsp;<a  class="btn btn-primary btn-inline text-white py-2 px-3" href="/actionedit/{{$complaint->student_id}}?fail" type="submit">Failed</a></div></td>
                                                     @endif
                                                 </tr>
                                             @endforeach
