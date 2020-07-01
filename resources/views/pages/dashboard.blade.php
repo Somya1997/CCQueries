@@ -79,24 +79,10 @@
                                                     <td>{{$complaint->availabledate}} </td>
                                                     <td>{{$complaint->availabletime}}</td>
                                                     <td>{{$complaint->nature}}</td>
+                                                   
                                                     @if(Auth::user()->name=='Admin')
-                                                        @if($complaint->status==0)
-                                                            <td><div class="dropdown">
-                                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                                    Choose Staff
-                                                                        <span class="caret"></span>
-                                                                    </button>
-                                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                                    @foreach($staffs as $staff)
-                                                                        <li><a class="dropdown-item" href="#" data-value="1">{{$staff->name}}</a></li>
-                                                                    @endforeach
-                                                                    </ul>
-                                                                    
-                                                                </div>
-                                                            </td>
-                                                        @else
-                                                            <td>{{$complaint->staff}}</td>
-                                                        @endif
+                                                     
+                                                        <td>{{$complaint->staff}}</td>
                                                     @endif
                                                 </tr>
                                             @endforeach
