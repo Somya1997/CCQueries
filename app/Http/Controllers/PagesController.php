@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\StudentMnnit;
 use App\ComplaintMnnit;
+use App\User;
 use Auth;
 
 use Illuminate\Http\Request;
@@ -26,7 +27,11 @@ class PagesController extends Controller
         ->where('staff','=',Auth::user()->name)
         ->latest()->paginate(2);
         }
-        return view('pages.dashboard')->withComplaints($complaints);
+        if(Auth::user()->name=='Admin'){
+            $staffs=User::where('name','!=','Admin')->get();
+        }
+        $stats=1;
+        return view('pages.dashboard')->withComplaints($complaints)->withStaffs($staffs)->withStats($stats);
     }
     public function getAssignedDashboard()
     {

@@ -63,42 +63,46 @@
                                                 <th>Available date</th>
                                                 <th>Available time</th>
                                                 <th>Nature Of Problem</th>
-                                                <th>Assign Staff</th>
+                                                @if(Auth::user()->name=='Admin' )
+                                                    <th>Assign Staff</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($complaints as $complaint)
                                                 <tr>
-<<<<<<< HEAD
                                                     <td>{{$complaint->student_id}}</td>
                                                     <td>{{$complaint->name}}</td>
                                                     <td>{{$complaint->regno}}</td>
-                                                    <td>{{$complaint->hostel}}, Room No. {{$complaint->room}}</td>
+                                                    <td>{{$complaint->hostel}}, Room No: {{$complaint->room}}</td>
                                                     <td>{{$complaint->phoneno}}</td>
                                                     <td>{{$complaint->availabledate}} </td>
                                                     <td>{{$complaint->availabletime}}</td>
                                                     <td>{{$complaint->nature}}</td>
-                                                    <td class="dropdown"><a class="btn btn-default actionButton"data-toggle="dropdown" href="#"> Choose Staff </a>
-                                                        <ul id="contextMenu" class="dropdown-menu" role="menu">
-                                                            <li><a  href="#" class="payLink">Pay</a></li>
-                                                            <li><a tabindex="-1" href="#" class="delLink">Delete</a></li>
-                                                        </ul>
-                                                    </td>
-=======
-                                                <td>{{$complaint->student_id}}</td>
-                                                <td>{{$complaint->name}}</td>
-                                                <td>{{$complaint->regno}}</td>
-                                                <td>{{$complaint->hostel}}, Room No: {{$complaint->room}}</td>
-                                                <td>{{$complaint->phoneno}}</td>
-                                                <td>{{$complaint->availabledate}} </td>
-                                                <td>{{$complaint->availabletime}}</td>
-                                                <td>{{$complaint->nature}}</td>
->>>>>>> 0b2b22941c07b173cf661c16ede17eb3b6030aa4
+                                                    @if(Auth::user()->name=='Admin')
+                                                        @if($complaint->status==0)
+                                                            <td><div class="dropdown">
+                                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                    Choose Staff
+                                                                        <span class="caret"></span>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                                    @foreach($staffs as $staff)
+                                                                        <li><a class="dropdown-item" href="#" data-value="1">{{$staff->name}}</a></li>
+                                                                    @endforeach
+                                                                    </ul>
+                                                                    
+                                                                </div>
+                                                            </td>
+                                                        @else
+                                                            <td>{{$complaint->staff}}</td>
+                                                        @endif
+                                                    @endif
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    
+                            
                                     <div class="text-center">
                                         {{ $complaints->links() }}
                                     </div>
