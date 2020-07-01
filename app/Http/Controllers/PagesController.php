@@ -30,14 +30,14 @@ class PagesController extends Controller
         if(Auth::user()->name=='Admin'){
             $staffs=User::where('name','!=','Admin')->get();
         }
-        $stats=1;
-        return view('pages.dashboard')->withComplaints($complaints)->withStaffs($staffs)->withStats($stats);
+        return view('pages.dashboard')->withComplaints($complaints)->withStaffs($staffs);
     }
     public function getAssignedDashboard()
     {
         $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
         ->where('status','=',1)
         ->latest()->paginate(2);
+        $staffs=ComplaintMnnit::where('status','=',1)->get();
         return view('pages.dashboard')->withComplaints($complaints);
     }
     public function getReviewDashboard()

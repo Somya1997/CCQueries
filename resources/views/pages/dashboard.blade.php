@@ -60,11 +60,17 @@
                                                 <th>Registration No</th>
                                                 <th>Address</th>
                                                 <th>Contact</th>
-                                                <th>Available date</th>
-                                                <th>Available time</th>
+                                                @if(Request::is('dashboard'))
+                                                    <th>Available date</th>
+                                                    <th>Available time</th>
+                                                @endif
                                                 <th>Nature Of Problem</th>
-                                                @if(Auth::user()->name=='Admin' )
-                                                    <th>Assign Staff</th>
+                                                @if(Auth::user()->name=='Admin') 
+                                                    @if(Request::is('dashboard'))
+                                                        <th>Assign Staff</th>
+                                                    @else
+                                                        <th>Assigned Staff</th>
+                                                    @endif
                                                 @endif
                                             </tr>
                                         </thead>
@@ -76,11 +82,13 @@
                                                     <td>{{$complaint->regno}}</td>
                                                     <td>{{$complaint->hostel}}, Room No: {{$complaint->room}}</td>
                                                     <td>{{$complaint->phoneno}}</td>
-                                                    <td>{{$complaint->availabledate}} </td>
-                                                    <td>{{$complaint->availabletime}}</td>
+                                                    @if(Request::is('dashboard'))
+                                                        <td>{{$complaint->availabledate}} </td>
+                                                        <td>{{$complaint->availabletime}}</td>
+                                                    @endif
                                                     <td>{{$complaint->nature}}</td>
                                                     @if(Auth::user()->name=='Admin')
-                                                        @if($complaint->status==0)
+                                                        @if(Request::is('dashboard'))
                                                             <td><div class="dropdown">
                                                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                                     Choose Staff
