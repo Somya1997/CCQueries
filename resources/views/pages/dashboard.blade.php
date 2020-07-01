@@ -69,6 +69,7 @@
                                         <tbody>
                                             @foreach ($complaints as $complaint)
                                                 <tr>
+<<<<<<< HEAD
                                                     <td>{{$complaint->student_id}}</td>
                                                     <td>{{$complaint->name}}</td>
                                                     <td>{{$complaint->regno}}</td>
@@ -83,6 +84,16 @@
                                                             <li><a tabindex="-1" href="#" class="delLink">Delete</a></li>
                                                         </ul>
                                                     </td>
+=======
+                                                <td>{{$complaint->student_id}}</td>
+                                                <td>{{$complaint->name}}</td>
+                                                <td>{{$complaint->regno}}</td>
+                                                <td>{{$complaint->hostel}}, Room No: {{$complaint->room}}</td>
+                                                <td>{{$complaint->phoneno}}</td>
+                                                <td>{{$complaint->availabledate}} </td>
+                                                <td>{{$complaint->availabletime}}</td>
+                                                <td>{{$complaint->nature}}</td>
+>>>>>>> 0b2b22941c07b173cf661c16ede17eb3b6030aa4
                                                 </tr>
                                             @endforeach
                                         </tbody>
