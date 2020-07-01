@@ -13,7 +13,7 @@
                         </li>
                         @if(Auth::user()->name=='Admin')
                         <li>
-                            <a href="{{route('complaints.update')}}">
+                            <a href="{{route('complaints.index')}}">
                                 Assigned Complaints</a>
                         </li>
                         <li>

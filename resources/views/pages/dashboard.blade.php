@@ -63,23 +63,31 @@
                                                 <th>Available date</th>
                                                 <th>Available time</th>
                                                 <th>Nature Of Problem</th>
+                                                <th>Assign Staff</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($complaints as $complaint)
                                                 <tr>
-                                                <td>{{$complaint->student_id}}</td>
-                                                <td>{{$complaint->name}}</td>
-                                                <td>{{$complaint->regno}}</td>
-                                                <td>{{$complaint->hostel}}, Room No. {{$complaint->room}}</td>
-                                                <td>{{$complaint->phoneno}}</td>
-                                                <td>{{$complaint->availabledate}} </td>
-                                                <td>{{$complaint->availabletime}}</td>
-                                                <td>{{$complaint->nature}}</td>
+                                                    <td>{{$complaint->student_id}}</td>
+                                                    <td>{{$complaint->name}}</td>
+                                                    <td>{{$complaint->regno}}</td>
+                                                    <td>{{$complaint->hostel}}, Room No. {{$complaint->room}}</td>
+                                                    <td>{{$complaint->phoneno}}</td>
+                                                    <td>{{$complaint->availabledate}} </td>
+                                                    <td>{{$complaint->availabletime}}</td>
+                                                    <td>{{$complaint->nature}}</td>
+                                                    <td class="dropdown"><a class="btn btn-default actionButton"data-toggle="dropdown" href="#"> Choose Staff </a>
+                                                        <ul id="contextMenu" class="dropdown-menu" role="menu">
+                                                            <li><a  href="#" class="payLink">Pay</a></li>
+                                                            <li><a tabindex="-1" href="#" class="delLink">Delete</a></li>
+                                                        </ul>
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
+                                    
                                     <div class="text-center">
                                         {{ $complaints->links() }}
                                     </div>
