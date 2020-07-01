@@ -12,8 +12,7 @@ class ComplaintMnnit extends Model
         'student_id', 'nature', 'availabletime', 'availabledate', 'staff', 'status'
     ];
     
-    // public $status = false;
-    // public $staff = false;
+   
 
   public function student_mnnits()
   {
