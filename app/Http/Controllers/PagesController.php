@@ -89,4 +89,12 @@ class PagesController extends Controller
             return redirect('dashboard');
 
     }
+    public function staffassigned(Request $request, $complaintMnnit,$staffname)
+    {
+       
+        $staff=ComplaintMnnit::where('student_id','=',$request->id)
+                                ->update(array('staff'=>$staffname,'status'=>1));
+        Session::flash('success','successfully assigned');
+        return redirect('dashboard');
+    }
 }

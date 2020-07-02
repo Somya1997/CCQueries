@@ -53,13 +53,9 @@
                     {{Session::get('id') }}
                     @php
                     Session::forget('success');
-                     @endphp
+                    @endphp
                     </div>
-                @else
-                <div class="alert-box alert-success">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                   error
-                    </div>
+               
                 @endif
                 
                 <div class="section__content section__content--p30">
@@ -109,14 +105,14 @@
                                                    
                                                     @if(Auth::user()->name=='Admin')
                                                         @if(Request::is('dashboard'))
-                                                            <td><div class="dropdown">
-                                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                            <td><div class="dropdown" >
+                                                                    <button class="btn btn-primary dropdown-toggle"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                                     Choose Staff
                                                                         <span class="caret"></span>
                                                                     </button>
-                                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                                    <ul class="dropdown-menu"  aria-labelledby="dropdownMenu1">
                                                                     @foreach($staffs as $staff)
-                                                                        <li><a class="dropdown-item" href="#" data-value="1">{{$staff->name}}</a></li>
+                                                                        <li><a class="dropdown-item" href="staffassigned/{{$complaint->student_id}}/{{$staff->name}}"   >{{$staff->name}}</a></li>
                                                                     @endforeach
                                                                     </ul>
                                                                     
