@@ -1,4 +1,10 @@
-// $(".dropdown-menu li .dropdown-item").click(function(){
-//     $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
-//     $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
-//   });
+
+            function showfield(name){
+            if(name=='failed')document.getElementById('div1').style.display="block";
+            else document.getElementById('div1').style.display="none";
+            }
+ 
+            function hidefield() {
+            document.getElementById('div1').style.display='none';
+            }
+      

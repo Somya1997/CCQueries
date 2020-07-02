@@ -29,7 +29,7 @@ class PagesController extends Controller
             $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
             ->where('status','=',1)
             ->where('staff','=',Auth::user()->name)
-            ->latest()->paginate(2);
+            ->latest()->paginate(5);
             return view('pages.dashboard')->withComplaints($complaints);
         }
        
@@ -70,7 +70,7 @@ class PagesController extends Controller
         return view('pages.dashboard')->withComplaints($complaints); 
     }
 
-    public function actionedit(Request $request,ComplaintMnnit $complaintMnnit)
+    public function actionedit(Request $request)
     {
         
             if(isset($_GET["success"]))
@@ -87,16 +87,17 @@ class PagesController extends Controller
                
                             Session::flash('success','successfully updated');
             }
-           
+            
             return redirect('dashboard');
 
     }
-    public function edit(Request $request,ComplaintMnnit $complaintMnnit)
+    
+    public function staffassigned(Request $request,$staffname)
     {
-        $complaint=ComplaintMnnit::where('student_id','=', $request->id)
-        ->update(['staff'=>$request->staff,'status'=>1]);
-        Session::flash('success','successfully updated');  
-            return redirect('dashboard');
-
+       
+        $staff=ComplaintMnnit::where('student_id','=',$request->id)
+                                ->update(array('staff'=>$staffname,'status'=>1));
+        Session::flash('success','successfully assigned');
+        return redirect('dashboard');
     }
 }

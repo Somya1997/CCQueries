@@ -23,6 +23,5 @@ Route::get('assigned','PagesController@getAssignedDashboard');
 Route::get('review','PagesController@getReviewDashboard');
 Route::get('closed','PagesController@getClosedDashboard');
 Route::get('actionedit/{id}', 'PagesController@actionedit');
-Route::get('edit/{id}', 'PagesController@edit');
-
+Route::get('staffassigned/{id}/{staff_name}','PagesController@staffassigned');
 Auth::routes();

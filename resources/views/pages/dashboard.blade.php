@@ -41,10 +41,8 @@
 @stop
 @section('body')
 
-        <!-- MENU SIDEBAR-->
-        <!-- @include('partials._sidebar') -->
-        <!-- END MENU SIDEBAR-->
-            <!-- MAIN CONTENT-->
+
+    <body onload="hidefield()">
             <div class="main-content">
             @if(Session::has('success'))
     <div class="alert-box alert-success">
@@ -52,13 +50,9 @@
                     {{ Session::get('success') }}
                     @php
                     Session::forget('success');
-                     @endphp
+                    @endphp
                     </div>
-                @else
-                <div class="alert-box alert-success">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                   error
-                    </div>
+               
                 @endif
                 
                 <div class="section__content section__content--p30">
@@ -76,8 +70,7 @@
                                                 <th>Address</th>
                                                 <th>Contact</th>
                                                 @if(Request::is('dashboard'))
-                                                    <th>Available date</th>
-                                                    <th>Available time</th>
+                                                    <th>Available date and time</th>
                                                 @endif
                                                 <th>Nature Of Problem</th>
                                                 @if(Auth::user()->name=='Admin') 
@@ -101,21 +94,20 @@
                                                     <td>{{$complaint->hostel}}, Room No: {{$complaint->room}}</td>
                                                     <td>{{$complaint->phoneno}}</td>
                                                     @if(Request::is('dashboard'))
-                                                        <td>{{$complaint->availabledate}} </td>
-                                                        <td>{{$complaint->availabletime}}</td>
+                                                        <td>{{$complaint->availabledate}} {{$complaint->availabletime}}</td>
                                                     @endif
                                                     <td>{{$complaint->nature}}</td>
                                                    
                                                     @if(Auth::user()->name=='Admin')
                                                         @if(Request::is('dashboard'))
-                                                            <td><div class="dropdown">
-                                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
+                                                            <td><div class="dropdown" >
+                                                                    <button class="btn btn-primary dropdown-toggle"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                                     Choose Staff
                                                                         <span class="caret"></span>
                                                                     </button>
-                                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                                    <ul class="dropdown-menu"  aria-labelledby="dropdownMenu1">
                                                                     @foreach($staffs as $staff)
-                                                                        <li><a class="dropdown-item" href="/edit/{{$complaint->student_id}}" data-value="1"  name="staff" id="staff">{{$staff->name}}</a></li>
+                                                                        <li><a class="dropdown-item" href="staffassigned/{{$complaint->student_id}}/{{$staff->name}}"   >{{$staff->name}}</a></li>
                                                                     @endforeach
                                                                     </ul>
                                                                     
@@ -126,9 +118,13 @@
                                                             
                                                         @endif
                                                     @else
-                                                    <td ><div class="btn-group" name="status" id="status"><a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?success" type="submit" >Success</a> &nbsp; &nbsp;<a  class="btn btn-primary btn-inline text-white py-2 px-3" href="/actionedit/{{$complaint->student_id}}?fail" type="submit">Failed</a></div></td>
+                                                    <td ><div class="btn-group" name="status" id="status"><a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?success" type="submit" >Success</a> &nbsp; &nbsp;
+                                                    <a  class="btn btn-primary btn-inline text-white py-2 px-3" type="submit" name="failed">Failed</a>
+                                                    </div>
+                                                    </td>
                                                     @endif
                                                 </tr>
+                                                <div id="div1"> <input type="text" class="form-control" placeholder="Reson of failure.." name="remark"/></div>
                                             @endforeach
                                         </tbody>
                                     </table>
@@ -148,5 +144,5 @@
         </div>
 
     </div>
-    
+ </body>   
 @stop

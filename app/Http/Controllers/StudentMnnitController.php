@@ -18,7 +18,7 @@ class StudentMnnitController extends Controller
      */
     public function index()
     {
-      //
+        //
     }
 
     /**
@@ -109,7 +109,7 @@ class StudentMnnitController extends Controller
      */
     public function edit(StudentMnnit $studentMnnit)
     {
-       //
+        //
     }
 
     /**
@@ -119,10 +119,9 @@ class StudentMnnitController extends Controller
      * @param  \App\StudentMnnit  $studentMnnit
      * @return \Illuminate\Http\Response
      */
-
     public function update(Request $request, StudentMnnit $studentMnnit)
     {
-       //
+        //
     }
 
     /**
