@@ -119,24 +119,10 @@ class StudentMnnitController extends Controller
      * @param  \App\StudentMnnit  $studentMnnit
      * @return \Illuminate\Http\Response
      */
-    private function handleRequest($request)
-    {
-        $data = $request->all();
-
-        if (isset($_POST["submit"])) {
-            $value=3;
-            $data['status'] = $value;
-        }
-
-        return $data;
-    }
 
     public function update(Request $request, StudentMnnit $studentMnnit)
     {
-        $complaint = ComplaintMnnit::findOrFail($studentMnnit);
-        $data = $this->handleRequest($request);
-        $complaint->update($data);
-        return redirect('/dashboard')->with('message','Your posts was updated successfully');
+       //
     }
 
     /**

@@ -50,7 +50,6 @@
     <div class="alert-box alert-success">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     {{ Session::get('success') }}
-                    {{Session::get('id') }}
                     @php
                     Session::forget('success');
                      @endphp
@@ -110,13 +109,13 @@
                                                     @if(Auth::user()->name=='Admin')
                                                         @if(Request::is('dashboard'))
                                                             <td><div class="dropdown">
-                                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
                                                                     Choose Staff
                                                                         <span class="caret"></span>
                                                                     </button>
                                                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                                                     @foreach($staffs as $staff)
-                                                                        <li><a class="dropdown-item" href="#" data-value="1">{{$staff->name}}</a></li>
+                                                                        <li><a class="dropdown-item" href="/edit/{{$complaint->student_id}}" data-value="1"  name="staff" id="staff">{{$staff->name}}</a></li>
                                                                     @endforeach
                                                                     </ul>
                                                                     
@@ -127,7 +126,7 @@
                                                             
                                                         @endif
                                                     @else
-                                                    <td ><div class="btn-group"><a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?success" type="submit" name="success" id="success">Success</a> &nbsp; &nbsp;<a  class="btn btn-primary btn-inline text-white py-2 px-3" href="/actionedit/{{$complaint->student_id}}?fail" type="submit">Failed</a></div></td>
+                                                    <td ><div class="btn-group" name="status" id="status"><a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?success" type="submit" >Success</a> &nbsp; &nbsp;<a  class="btn btn-primary btn-inline text-white py-2 px-3" href="/actionedit/{{$complaint->student_id}}?fail" type="submit">Failed</a></div></td>
                                                     @endif
                                                 </tr>
                                             @endforeach

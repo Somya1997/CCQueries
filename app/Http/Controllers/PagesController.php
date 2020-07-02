@@ -72,6 +72,7 @@ class PagesController extends Controller
 
     public function actionedit(Request $request,ComplaintMnnit $complaintMnnit)
     {
+        
             if(isset($_GET["success"]))
             {
                 $complaint=ComplaintMnnit::where('student_id','=', $request->id)
@@ -86,6 +87,15 @@ class PagesController extends Controller
                
                             Session::flash('success','successfully updated');
             }
+           
+            return redirect('dashboard');
+
+    }
+    public function edit(Request $request,ComplaintMnnit $complaintMnnit)
+    {
+        $complaint=ComplaintMnnit::where('student_id','=', $request->id)
+        ->update(['staff'=>$request->staff,'status'=>1]);
+        Session::flash('success','successfully updated');  
             return redirect('dashboard');
 
     }

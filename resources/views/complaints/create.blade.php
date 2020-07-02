@@ -97,7 +97,7 @@
                <option selected="selected">Choose...</option>
                <option value="Wifi not working">Wifi not working</option>
                <option value="LAN port broken">LAN port broken</option>
-               <option vlaue="Weak Connection">Weak Connection</option>
+               <option value="Weak Connection">Weak Connection</option>
                <option value="Damaged Wire">Damaged Wire</option>
                <option value="Other">Other</option>
                </select>
