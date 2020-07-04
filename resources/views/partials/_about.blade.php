@@ -85,7 +85,7 @@
               </figure>
               <h3 class="font-size-20 text-black">Shri Anurag Singh Chauhan</h3>
               <span class="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">Sr. T.A</span>
-              <p class="mb-4"></br>Email: anurag@mnnit.ac.in</p>
+              <p class="mb-4"></br>Office:Computer Center First Floor<br/>Email: anurag@mnnit.ac.in</p>
               <div class="block-social-1">
                 <a href="#" class="btn border-w-2 rounded primary-primary-outline--hover"><span class="icon-facebook"></span></a>
                 <a href="#" class="btn border-w-2 rounded primary-primary-outline--hover"><span class="icon-envelope"></span></a>
