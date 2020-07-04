@@ -17,12 +17,18 @@
 @endsection
 @section('body')
 <div class="back-cover" style="background-image:url('../images/cc2.jpg');">  
+<<<<<<< HEAD
+	<div class="container text-center">
+		<div class="row d-flex justify-content-center">
+			<div class="col-md-10">
+=======
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-10 offset-md-1">
+>>>>>>> 5dcb2df4d73f1b77c5cb54070e139681613e8089
 				<div class="card1">
 					<div class="card-header1" style="background:darkorange">
-							<h1 style="text-align:center; font-family:calibri; color:white;">COMPLAINT TRAKING</h1>
+							<h1 style="text-align:center; font-family:calibri; color:white;">COMPLAINT TRACKING</h1>
 					</div>
 					
 							<div class="content2 d-flex justify-content-around top">
@@ -38,40 +44,40 @@
 								<div class="clear"></div>
 							</div>
 								<div class="content3 row justify-content-center">
-									<div class="shipment">
-											<div class="confirm">
+									<div class="complaint_tracking">
+											<div class="Complaint_Registered">
 												<div class="imgcircle">
 														<img src="../images/confirm.png" alt="confirm order">
 												</div>
 												<span class="line"></span>
 												<p>Complaint Registered</p>
 											</div>
-											<div class="process">
+											<div class="Processing">
 												<div class="imgcircle">
 														<img src="../images/process.png" alt="process order">
 												</div>
 												<span class="line"></span>
 												<p>Processing</p>
 											</div>
-											<div class="quality">
+											<div class="Staff_Assigned">
 												<div class="imgcircle">
 														<img src="../images/quality.png" alt="quality check">
 												</div>
 												<span class="line"></span>
 												<p>Staff Assigned</p>
 											</div>
-											<div class="dispatch">
+											<div class="Complaint_Resolved">
 												<div class="imgcircle">
 														<img src="../images/dispatch.png" alt="dispatch product">
 												</div>
 												<span class="line"></span>
 												<p>Complaint Resolved</p>
 											</div>
-											<div class="delivery">
+											<div class="Complaint_Closed">
 												<div class="imgcircle">
 														<img src="../images/delivery.png" alt="delivery">
 												</div>
-												<p>Complaint closed</p>
+												<p>Complaint Closed</p>
 											</div>
 												<div class="clear"></div>
 									</div>

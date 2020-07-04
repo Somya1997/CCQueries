@@ -14,6 +14,7 @@
       </div>
     </div>
 </div>
+
 @endsection
 
 @section('body')
@@ -27,19 +28,35 @@
             function hidefield() {
             document.getElementById('div1').style.display='none';
             }
+            function TDate() {
+                var availabledate = document.getElementById("availabledate").value;
+                var ToDate = new Date();
+
+                if (new Date(availabledate).getTime() <= ToDate.getTime()) {
+                    alert("The Date must be Bigger or Equal to today's date.");
+                    return false;
+                }
+                return true;
+            }
+
+            function TTime() {
+                var availabletime = document.getElementById("availabletime").value;
+                var today = new Time();
+                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+                if ( new Time(availabletime).getTime() <= time.getTime()) {
+                    alert("The Time must be Bigger to current's time.");
+                    return false;
+                }
+                return true;
+            }
+
+
+
+            
+            
         </script>
         <body onload="hidefield()">
-    <!-- @if(Session::has('success'))
-    <div class="alert-box alert-success">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    {{ Session::get('success') }}
-                    {{Session::get('id') }}
-                    @php
-                    Session::forget('success');
-                     @endphp
-                    </div>
-                @endif
-                 -->
 
 <div class="back-cover" style="background-image:url('../images/cc2.jpg');">  
 <br>
@@ -57,38 +74,38 @@
 
              
 
-        <form action="{{ route('complaints.store') }}" method="POST">
+        <form enctype="multipart/form-data" action="{{ route('complaints.store') }}" method="POST" data-parsley-validate=''>
                     @csrf
           <div class="form-group">    
               <label for="name">Name:</label>
-              <input type="text" class="form-control" name="name" id="name"/>
+              <input type="text" class="form-control" name="name" id="name" required='' data-parsley-pattern="[a-zA-Z\s]+$" data-parsley-trigger="keyup" />
               <span class="text-danger">{{ $errors->first('name') }}</span>
           </div>
 
           <div class="form-group">
               <label for="regno">Registration Number:</label>
-              <input type="text" class="form-control" name="regno" id="regno"/>
+              <input type="text" class="form-control" name="regno" id="regno" required='' data-parsley-type="alphanum" data-parsley-trigger="keyup" />
               <span class="text-danger">{{ $errors->first('regno') }}</span>
           </div>
 
           <div class="form-group">
               <label for="phoneno">Contact Number:</label>
-              <input type="text" class="form-control" name="phoneno" id="phoneno"/>
+              <input type="text" class="form-control" name="phoneno" id="phoneno" required='' data-parsley-type="integer" data-parsley-pattern="[0-9]+$" data-parsley-trigger="keyup" />
               <span class="text-danger">{{ $errors->first('phoneno') }}</span>
           </div>
           <div class="form-group">
               <label for="email">Email:</label>
-              <input type="email" class="form-control" name="email" id="email" placeholder="We will mail your Complaint number...."/>
+              <input type="email" class="form-control" name="email" id="email" required='' data-parsley-type="email" data-parsley-type="email" data-parsley-trigger="keyup" />
               <span class="text-danger">{{ $errors->first('email') }}</span>
           </div>
           <div class="form-group">
               <label for="hostel">Hostel:</label>
-              <input type="text" class="form-control" name="hostel" id="hostel"/>
+              <input type="text" class="form-control" name="hostel" id="hostel" required='' data-parsley-pattern="[a-zA-Z\s]+$" data-parsley-trigger="keyup" />
               <span class="text-danger">{{ $errors->first('hostel') }}</span>
           </div>
           <div class="form-group">
               <label for="room">Room No.:</label>
-              <input type="text" class="form-control" name="room" id="room"/>
+              <input type="text" class="form-control" name="room" id="room" required='' data-parsley-type="integer" data-parsley-range="[1, 300]" data-parsley-trigger="keyup" />
               <span class="text-danger">{{ $errors->first('room') }}</span>
           </div>
           <div class="form-group">
@@ -101,17 +118,17 @@
                <option value="Damaged Wire">Damaged Wire</option>
                <option value="Other">Other</option>
                </select>
-               <div id="div1">Other Problem: <input type="text" class="form-control" placeholder="Other problem please write here..." name="other"/></div>
+               <div id="div1">Other Problem: <input type="text" class="form-control" placeholder="Other problem please write here..." name="other" /></div>
                <span class="text-danger">{{ $errors->first('nature') }}</span>
           </div>
           <div class="form-group">
               <label for="availabledate">Availability Date:</label>
-              <input type="date" class="form-control" name="availabledate" id="availabledate"/>
+              <input type="date" class="form-control" name="availabledate" id="availabledate" onchange="TDate()" required='' data-parsley-trigger="keyup" />
               <span class="text-danger">{{ $errors->first('availabledate') }}</span>
           </div> 
           <div class="form-group">
               <label for="availabletime">Availability Time:</label>
-              <input type="time" class="form-control" name="availabletime" id="availabletime" value="09:00"/>
+              <input type="time" class="form-control" name="availabletime" id="availabletime" onchange="TTime()" required='' data-parsley-trigger="keyup" />
               <span class="text-danger">{{ $errors->first('availabletime') }}</span>
           </div>          
           <div class="form-group">              

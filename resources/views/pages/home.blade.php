@@ -31,10 +31,10 @@
           <p class="mb-5">WANT TO CHECK YOUR COMPLAINT STATUS, JUST ENTER YOUR COMPLAINT NUMBER</p>
           <form action="#">
             <div class="form-group d-flex">
-              <input type="text" class="form-control" placeholder="Enter your complaint number">
+              <input type="text" class="form-control" id="track" placeholder="Enter your complaint number">
             </div>
             <div class="form-group d-flex">
-              <input type="submit" class="btn btn-primary btn-lg text-white px-5" value="Track Now">
+            <div class="col-12"><a href="{{route('complaints.show',1)}}" button type="submit" class="btn btn-primary btn-lg text-white px-5 float-left">Track Now</a></div>
             </div>
           </form>
         </div>
