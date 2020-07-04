@@ -41,8 +41,7 @@
 @stop
 @section('body')
 
-
-    <body onload="hidefield()">
+    
             <div class="main-content">
             @if(Session::has('success'))
     <div class="alert-box alert-success">
@@ -76,12 +75,21 @@
                                                 @if(Auth::user()->name=='Admin') 
                                                     @if(Request::is('dashboard'))
                                                         <th>Assign Staff</th>
+                                                    @elseif(Request::is('assigned'))
+                                                        <th>Assigned Staff</th>
                                                     @else
                                                         <th>Assigned Staff</th>
+                                                        <th>Remark</th>
+                                                        <th colspan="2"> Complaint Status </th>
                                                     @endif
+
                                                 @else
-                                                   <th colspan="2"> Complaint Status </th>
-                                                   <!-- <th></th> -->
+                                                    @if(Request::is('dashboard'))
+                                                    <th> Complaint Status </th>
+                                                    @else
+                                                        <th>Remark</th>
+                                                        <th colspan="2"> Complaint Status </th>
+                                                    @endif
                                                 @endif
                                             </tr>
                                         </thead>
@@ -97,35 +105,75 @@
                                                         <td>{{$complaint->availabledate}} {{$complaint->availabletime}}</td>
                                                     @endif
                                                     <td>{{$complaint->nature}}</td>
-                                                   
+<!-- --------------------------------------------  Admin Dashboard Properties ------------------------------------------------------------------ -->
                                                     @if(Auth::user()->name=='Admin')
+                                                        <!-- New Complaints -->
                                                         @if(Request::is('dashboard'))
                                                             <td><div class="dropdown" >
-                                                                    <button class="btn btn-primary dropdown-toggle"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                <button class="btn btn-primary dropdown-toggle"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                                     Choose Staff
-                                                                        <span class="caret"></span>
-                                                                    </button>
-                                                                    <ul class="dropdown-menu"  aria-labelledby="dropdownMenu1">
+                                                                <span class="caret"></span>
+                                                                </button>
+                                                                <ul class="dropdown-menu"  aria-labelledby="dropdownMenu1">
                                                                     @foreach($staffs as $staff)
                                                                         <li><a class="dropdown-item" href="staffassigned/{{$complaint->student_id}}/{{$staff->name}}"   >{{$staff->name}}</a></li>
                                                                     @endforeach
-                                                                    </ul>
-                                                                    
+                                                                </ul>    
                                                                 </div>
                                                             </td>
+
+                                                        @elseif(Request::is('assigned'))
+                                                            <td>{{$complaint->staff}}</td>
+                                                        <!-- For review And closed of admin -->
                                                         @else
                                                             <td>{{$complaint->staff}}</td>
-                                                            
+                                                            <td style="color:darkorange;">{{$complaint->remark}}</td>
+                                                            @if(Request::is('review'))
+                                                            <td >
+                                                                <div class="btn-group" name="status" id="status">
+                                                                    <a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?success" type="submit" >Success</a> &nbsp; &nbsp;
+                                                                    <a  class="btn btn-primary btn-inline text-white py-2 px-3" type="submit" href="/actionedit/{{$complaint->student_id}}?fail" name="failed">Failed</a>
+                                                                 </div>
+                                                            </td>
+                                                        <!-- Closed dashboard -->
+                                                            @else
+                                                            <td>
+                                                                @if($complaint->status==3)
+                                                                <div style="color:#3490dc;">Successfully closed</div>
+                                                                @else
+                                                                <div style="color:darkorange;">Failed complaint</div>
+                                                                @endif
+                                                            </td>
+                                                            @endif
                                                         @endif
+<!-- ------------------------------------------------ Staff Dashboard Property --------------------------------------------------------------- -->
                                                     @else
-                                                    <td ><div class="btn-group" name="status" id="status"><a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?success" type="submit" >Success</a> &nbsp; &nbsp;
-                                                    <a  class="btn btn-primary btn-inline text-white py-2 px-3" type="submit" name="failed">Failed</a>
-                                                    </div>
+                                                    @if(Request::is('dashboard'))
+                                                    <td ><div class="btn-group" name="status" id="status">
+                                                            <a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?success" type="submit" >Success</a> &nbsp; &nbsp;
+                                                            <a  class="btn btn-primary btn-inline text-white py-2 px-3" type="submit" onclick="myFunction()" name="failed">Failed</a>
+                                                        </div>
+                                                         <div id="remark" style="display:none;" >
+                                                            <form action="{{url('actionedit/'.$complaint->student_id)}}" method="GET"> 
+                                                                <input type="text" class="form-control" placeholder="Reson of failure.." name="remark"/> 
+                                                                 <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                                            </form>
+                                                        </div>
                                                     </td>
+                                                    @else
+                                                        <td style="color:darkorange;">{{$complaint->remark}}</td>
+                                                        <td>
+                                                            @if($complaint->status==3)
+                                                            <div style="color:#3490dc;">Successfully closed</div>
+                                                            @else
+                                                            <div style="color:darkorange;">Failed complaint</div>
+                                                            @endif
+                                                        </td>
                                                     @endif
+                                                    @endif
+                                                    
                                                 </tr>
-                                                <div id="div1"> <input type="text" class="form-control" placeholder="Reson of failure.." name="remark"/></div>
-                                            @endforeach
+                                                 @endforeach
                                         </tbody>
                                     </table>
                             
@@ -144,5 +192,16 @@
         </div>
 
     </div>
- </body>   
+    <script>
+        // hidefield();
+        // function hidefield()
+        // {
+
+        // }
+        function myFunction()
+        {
+            console.log('register is set');
+            document.getElementById("remark").style.display="block";
+        }
+    </script>
 @stop

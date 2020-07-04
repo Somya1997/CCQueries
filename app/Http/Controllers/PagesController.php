@@ -20,7 +20,7 @@ class PagesController extends Controller
     {
         if(Auth::user()->name=='Admin')
         {
-            $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id') ->where('status','=',0)->latest()->paginate(2);
+            $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id') ->where('status','=',0)->orderBy('updated_at','desc')->paginate(5);
             $staffs=User::where('name','!=','Admin')->get();
             return view('pages.dashboard')->withComplaints($complaints)->withStaffs($staffs);
         }
@@ -29,7 +29,7 @@ class PagesController extends Controller
             $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
             ->where('status','=',1)
             ->where('staff','=',Auth::user()->name)
-            ->latest()->paginate(5);
+            ->orderBy('updated_at','desc')->paginate(5);
             return view('pages.dashboard')->withComplaints($complaints);
         }
        
@@ -39,7 +39,7 @@ class PagesController extends Controller
     {
         $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
         ->where('status','=',1)
-        ->latest()->paginate(2);
+        ->orderBy('updated_at','desc')->paginate(5);
         $staffs=ComplaintMnnit::where('status','=',1)->get();
         return view('pages.dashboard')->withComplaints($complaints);
     }
@@ -47,7 +47,7 @@ class PagesController extends Controller
     {
         $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
         ->whereIn('status', ['-1', '2'])   //One way of checking two values in where clause
-        ->latest()->paginate(2);  
+        ->orderBy('updated_at','desc')->paginate(5);
         return view('pages.dashboard')->withComplaints($complaints); 
     }
     public function getClosedDashboard()
@@ -57,7 +57,7 @@ class PagesController extends Controller
             $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
             ->where('status','=',3)         // second way of checking two values in where clause
             ->orWhere('status','=',-2)
-            ->latest()->paginate(2);  
+            ->orderBy('updated_at','desc')->paginate(5);
         }
         else
         {
@@ -65,34 +65,56 @@ class PagesController extends Controller
         ->where('status','=',3)
         ->orWhere('status','=',-2)
         ->where('staff','=',Auth::user()->name)
-        ->latest()->paginate(2);  
+        ->orderBy('updated_at','desc')->paginate(5); 
         }
         return view('pages.dashboard')->withComplaints($complaints); 
     }
 
-    public function actionedit(Request $request)
+    public function actionedit(Request $request,$complaintMnnit)
     {
-        
-            if(isset($_GET["success"]))
+            if(Auth::user()->name=='Admin')
             {
-                $complaint=ComplaintMnnit::where('student_id','=', $request->id)
-                            ->update(['status'=>2]);
-               
-                            Session::flash('success','successfully updated');
+                if(isset($_GET["success"]))
+                {
+                    $complaint=ComplaintMnnit::where('student_id','=', $request->id)
+                                ->update(['status'=>3]);
+                
+                                Session::flash('success','successfully updated');
+                }
+                if(isset($_GET["fail"]))
+                {
+                    $complaint=ComplaintMnnit::where('student_id','=', $request->id)
+                                ->update(array('status'=>-2));
+                
+                                Session::flash('success','successfully updated');
+                }
+                return redirect('review');
             }
-            if(isset($_GET["fail"]))
-            {
-                $complaint=ComplaintMnnit::where('student_id','=', $request->id)
-                            ->update(['status'=>-1]);
-               
-                            Session::flash('success','successfully updated');
+            else
+            {       
+                if(isset($_GET["success"]))
+                {
+                    $complaint=ComplaintMnnit::where('student_id','=', $request->id)
+                                ->update(['status'=>2]);
+                
+                                Session::flash('success','successfully updated');
+                }
+                else
+                {
+                    // $remark=$_GET["remark"];
+                    // echo "<script>console.log($remark)</script>";
+                    $complaint=ComplaintMnnit::where('student_id','=', $request->id)
+                                ->update(array('remark'=>$request->remark,'status'=>-1));
+                
+                                Session::flash('success','successfully updated');
+                }
+                return redirect('dashboard');
             }
-            
-            return redirect('dashboard');
+           
 
     }
     
-    public function staffassigned(Request $request,$staffname)
+    public function staffassigned(Request $request,$complaintMnnit,$staffname)
     {
        
         $staff=ComplaintMnnit::where('student_id','=',$request->id)
