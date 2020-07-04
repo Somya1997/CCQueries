@@ -15,4 +15,6 @@
    
     <script src="{{ URL::asset('js/main.js') }}"></script>
     <script src="{{asset('js/main2.js') }}"></script>
+    <script src="{{asset('js/button.js') }}"></script>
+    
     

@@ -7,6 +7,7 @@ use App\ComplaintMnnit;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Session;
+use Auth;
 
 class StudentMnnitController extends Controller
 {
@@ -78,8 +79,6 @@ class StudentMnnitController extends Controller
         $complaintMnnit->nature= $request->other == null? $request->nature: $request->other;
         $complaintMnnit->availabletime  =$request->availabletime;
         $complaintMnnit->availabledate  =$request->availabledate;
-        $complaintMnnit->staff          =$request->staff;
-        $complaintMnnit->status         =$request->status;
 
         $complaintMnnit->save();
 

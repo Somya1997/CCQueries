@@ -17,9 +17,15 @@
 @endsection
 @section('body')
 <div class="back-cover" style="background-image:url('../images/cc2.jpg');">  
+<<<<<<< HEAD
 	<div class="container text-center">
 		<div class="row d-flex justify-content-center">
 			<div class="col-md-10">
+=======
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-10 offset-md-1">
+>>>>>>> 5dcb2df4d73f1b77c5cb54070e139681613e8089
 				<div class="card1">
 					<div class="card-header1" style="background:darkorange">
 							<h1 style="text-align:center; font-family:calibri; color:white;">COMPLAINT TRACKING</h1>
@@ -81,7 +87,7 @@
 									</div>
 								</div>
 								<form action="#">
-									<div class="form-group d-flex text-center">
+									<div class="form-group d-flex ">
 									<div class="col-12"><a href="{{url('/')}}" class="btn btn-primary btn-lg font-weight-bold text-white px-5">HOME</a></div>
 									</div>
 								</form>

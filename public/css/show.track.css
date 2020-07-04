@@ -113,7 +113,7 @@ span.line {
 @media(max-width:1920px){
 	span.line {
 	width:157px;
-	left:32%;
+	/* left:32%; */
 	}
 	.shipment{
 		margin-top:10%;
