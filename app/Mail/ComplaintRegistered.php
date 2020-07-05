@@ -37,9 +37,9 @@ class ComplaintRegistered extends Mailable
      */
     public function build()
     {
-        return $this->from('mnnit.ccquesries@gmail.com', 'Computer Center MNNIT');
+        return $this->from('mnnit.ccquesries@gmail.com', 'Computer Center MNNIT')
                     ->to($this->studentMnnit->email, $this->studentMnnit->name)
-                    ->subject('Your Complaint number #'$this->studentMnnit->id' has been regesterd in CC Queries.' )
+                    ->subject('Mnnit CcQueries')
                     ->view('email.ccqueries');
     }
 }

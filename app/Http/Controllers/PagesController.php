@@ -123,11 +123,7 @@ class PagesController extends Controller
 
     }
     
-<<<<<<< HEAD
-    public function staffassigned(Request $request,$ComplaintMnnit,$staffname)
-=======
     public function staffassigned(Request $request,$complaintMnnit,$staffname)
->>>>>>> 9584062c1822bfd7339ace223d2957bc5764868b
     {
        
         $staff=ComplaintMnnit::where('student_id','=',$request->id)
