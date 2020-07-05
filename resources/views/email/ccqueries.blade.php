@@ -161,15 +161,13 @@
 <body>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-top: 0;border-bottom: 0;">
-    <tbody>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class="mcnDividerBlockOuter">
                               <tr>
                                 <td>
                                   <div class="delivery-info">
 									<span class="delivery-info--subs">Computer Center MNNIT Allahabad, </span>
                                     <span><br>We are happy to let you know that your complaint has been registered with us and your complaint number is {{$studentMnnit->id}}. We will try to solve your query as soon as possible. The staff will contact you, within your available time, for further details. You can also track the status of your complaint on our website by simply entring your complaint number. Please find below the details.<br><br></span>
-									<span class="delivery-info--title">Complaint Information</span>
-                                    <hr />
                                     <span class="delivery-info--recipient">Complaint Number</span>
                                     <span class="delivery-info--address">{{$studentMnnit->id}}</span>
                                     <br />
