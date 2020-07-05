@@ -43,7 +43,7 @@
 
     
             <div class="main-content">
-            @if(Session::has('success'))
+            <!-- @if(Session::has('success'))
     <div class="alert-box alert-success">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     {{ Session::get('success') }}
@@ -52,7 +52,7 @@
                     @endphp
                     </div>
                
-                @endif
+                @endif -->
                 
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
@@ -79,7 +79,7 @@
                                                         <th>Assigned Staff</th>
                                                     @else
                                                         <th>Assigned Staff</th>
-                                                        <th>Remark</th>
+                                                        <th> Staff Remark</th>
                                                         <th colspan="2"> Complaint Status </th>
                                                     @endif
 
@@ -87,7 +87,7 @@
                                                     @if(Request::is('dashboard'))
                                                     <th> Complaint Status </th>
                                                     @else
-                                                        <th>Remark</th>
+                                                        <th>Staff Remark</th>
                                                         <th colspan="2"> Complaint Status </th>
                                                     @endif
                                                 @endif
@@ -127,7 +127,8 @@
                                                         <!-- For review And closed of admin -->
                                                         @else
                                                             <td>{{$complaint->staff}}</td>
-                                                            <td style="color:darkorange;">{{$complaint->remark}}</td>
+                                                            <td ><a href="" onclick="remarkfunc('{{$complaint->remark}}')" style="color:darkorange;">{{ substr($complaint->remark,0,50) }}{{ strlen($complaint->remark)>50 ? "...":"" }}</a></td>
+                                                      
                                                             @if(Request::is('review'))
                                                             <td >
                                                                 <div class="btn-group" name="status" id="status">
@@ -155,13 +156,13 @@
                                                         </div>
                                                          <div id="remark" style="display:none;" >
                                                             <form action="{{url('actionedit/'.$complaint->student_id)}}" method="GET"> 
-                                                                <input type="text" class="form-control" placeholder="Reson of failure.." name="remark"/> 
+                                                                <input type="text" class="form-control" placeholder="Reason of failure.." name="remark"/> 
                                                                  <button type="submit" class="btn btn-primary btn-block">Submit</button>
                                                             </form>
                                                         </div>
                                                     </td>
                                                     @else
-                                                        <td style="color:darkorange;">{{$complaint->remark}}</td>
+                                                        <td style="color:darkorange;"><a href="#" class="btn btn-primary">{{ substr($complaint->remark,0,50) }}{{ strlen($complaint->remark)>50 ? "...":"" }}</a></td>
                                                         <td>
                                                             @if($complaint->status==3)
                                                             <div style="color:#3490dc;">Successfully closed</div>
@@ -177,8 +178,15 @@
                                         </tbody>
                                     </table>
                             
-                                    <div class="text-center">
+                                    <div class="inline">
+                                        <div class="text-left">
                                         {{ $complaints->links() }}
+                                        </div>
+                                        @if(Request::is('closed'))
+                                        <div class="text-right">
+                                        <a href='/pdfview' class="btn btn-primary">Export PDF</a>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                
@@ -193,11 +201,12 @@
 
     </div>
     <script>
-        // hidefield();
-        // function hidefield()
-        // {
-
-        // }
+   
+       function remarkfunc(remark)
+       {
+        console.log('oohh');
+           alert(remark);
+       }
         function myFunction()
         {
             console.log('register is set');

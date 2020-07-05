@@ -24,4 +24,8 @@ Route::get('review','PagesController@getReviewDashboard');
 Route::get('closed','PagesController@getClosedDashboard');
 Route::get('actionedit/{id}', 'PagesController@actionedit');
 Route::get('staffassigned/{id}/{staff_name}','PagesController@staffassigned');
+
+Route::get('pdfview',array('as'=>'pdfview','uses'=>'PdfController@pdfview'));
+
+
 Auth::routes();
