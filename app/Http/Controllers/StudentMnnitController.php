@@ -6,8 +6,10 @@ use App\StudentMnnit;
 use App\ComplaintMnnit;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Session;
 use Auth;
+use App\Mail\ComplaintRegistered;
 
 class StudentMnnitController extends Controller
 {
@@ -82,6 +84,7 @@ class StudentMnnitController extends Controller
 
         $complaintMnnit->save();
 
+
         Session::flash('success', 'Complaint Registered successfully with complaint id: ');
 
         return redirect()->route('complaints.show',$studentMnnit->id);
@@ -98,6 +101,9 @@ class StudentMnnitController extends Controller
     public function show($id)
     {
         $studentMnnit = StudentMnnit::find($id);
+        
+        Mail::send(new ComplaintRegistered($studentMnnit));
+
         return view('complaints.show')->withStudentMnnit($studentMnnit); 
     }
 
