@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\StudentMnnit;
 use App\ComplaintMnnit;
 use App\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\closingMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Auth;
@@ -67,6 +69,7 @@ class PagesController extends Controller
             ->where('status','=',3)         // second way of checking two values in where clause
             ->orWhere('status','=',-2)
             ->orderBy('updated_at','desc')->paginate(5);
+            return view('pages.dashboard')->withComplaints($complaints);
         }
         else
         {
@@ -75,8 +78,9 @@ class PagesController extends Controller
         ->orWhere('status','=',-2)
         ->where('staff','=',Auth::user()->name)
         ->orderBy('updated_at','desc')->paginate(5); 
-        }
         return view('pages.dashboard')->withComplaints($complaints); 
+        }
+        
     }
 
     public function actionedit(Request $request,$complaintMnnit)
@@ -87,8 +91,9 @@ class PagesController extends Controller
                 {
                     $complaint=ComplaintMnnit::where('student_id','=', $request->id)
                                 ->update(['status'=>3]);
-                
-                                Session::flash('success','successfully updated');
+                    $closedMail=StudentMnnit::find($complaintMnnit);
+                    Mail::send(new closingMail($closedMail));
+                    Session::flash('success','successfully updated');
                 }
                 if(isset($_GET["fail"]))
                 {
