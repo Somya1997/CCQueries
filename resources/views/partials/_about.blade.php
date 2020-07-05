@@ -27,7 +27,7 @@
               <figure>
                 <img src="images/Abhay_singh.jpg" alt="Image" class="img-fluid rounded-circle">
               </figure>
-              <h3 class="font-size-20 text-black">Shri Abhay Singh</h3>
+              <h3 class="font-size-20 text-black">Er. Abhay Singh</h3>
               <span class="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">Technical Officer</span>
               <p class="mb-4"><br/>Office: Computer Center Ground Floor<br/>Email: abhay@mnnit.ac.in</p>
               <div class="block-social-1">

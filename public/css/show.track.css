@@ -1,8 +1,6 @@
-.clear {
-	clear:both;
-}
 .card1{
-	width:98%;
+	float:left
+	width:96%;
 	margin:3%;
 	height:93%;
 	background-color:#F5F5F5;

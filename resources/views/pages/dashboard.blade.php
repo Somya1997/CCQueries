@@ -83,7 +83,11 @@
                                                         <th colspan="2"> Complaint Status </th>
                                                     @endif
 
-                                                @else
+                                                @elseif(Request::is('pending'))
+                                                    <th>Remark</th>
+                                                    <th>Complaint Status</th>
+
+                                                @else    
                                                     @if(Request::is('dashboard'))
                                                     <th> Complaint Status </th>
                                                     @else
@@ -161,6 +165,15 @@
                                                             </form>
                                                         </div>
                                                     </td>
+                                                    @elseif(Request::is('pending'))
+                                                    <td style="color:darkorange;">{{$complaint->remark}}</td>
+                                                        <td>
+                                                            @if($complaint->status==2)
+                                                            <div style="color:#3490dc;">Successfully closed</div>
+                                                            @elseif($complaint->status==-1)
+                                                            <div style="color:darkorange;">Failed complaint</div>
+                                                            @endif
+                                                        </td> 
                                                     @else
                                                         <td style="color:darkorange;"><a href="#" class="btn btn-primary">{{ substr($complaint->remark,0,50) }}{{ strlen($complaint->remark)>50 ? "...":"" }}</a></td>
                                                         <td>

@@ -17,15 +17,9 @@
 @endsection
 @section('body')
 <div class="back-cover" style="background-image:url('../images/cc2.jpg');">  
-<<<<<<< HEAD
 	<div class="container text-center">
 		<div class="row d-flex justify-content-center">
 			<div class="col-md-10">
-=======
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-10 offset-md-1">
->>>>>>> 5dcb2df4d73f1b77c5cb54070e139681613e8089
 				<div class="card1">
 					<div class="card-header1" style="background:darkorange">
 							<h1 style="text-align:center; font-family:calibri; color:white;">COMPLAINT TRACKING</h1>
