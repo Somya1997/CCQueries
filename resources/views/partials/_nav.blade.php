@@ -11,15 +11,11 @@
 
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                   <li><a href="{{url('/')}}" class="nav-link">Home</a></li>
-
-
                   <li class="has-children">
                     <a href="#about-section" class="nav-link">About Us</a>
                     <ul class="dropdown arrow-top">
                       <li><a href="#team-section" class="nav-link">Head</a></li>
                       <li><a href="#specialist-section" class="nav-link">Specialist</a></li>
-                      <li><a href="#faq-section" class="nav-link">FAQ</a></li>
-                      
                     </ul>
                   </li>
 
@@ -27,6 +23,7 @@
                   <!-- <button class="btn btn-primary text-white px-5 float-right"><a href="#login-section" class="nav-link">Login as Admin</a></button> -->
                   <!-- <li><input type="submit" class="btn btn-primary text-white px-5" value="Login as Admin"></li> -->
                   <li><a  class="btn btn-primary text-white py-3 px-5" href="{{route('login') }}" type="submit">Login</a></li>
+                  
                 </ul>
               </nav>
 

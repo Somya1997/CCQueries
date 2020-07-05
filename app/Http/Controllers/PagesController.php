@@ -50,6 +50,15 @@ class PagesController extends Controller
         ->orderBy('updated_at','desc')->paginate(5);
         return view('pages.dashboard')->withComplaints($complaints); 
     }
+    public function getPending()
+    {
+        $complaints= ComplaintMnnit::join('student_mnnits','id','=','student_id')
+        ->whereIn('status',['-1','2','3'])
+        ->where('staff','=',Auth::user()->name)
+        ->orderBy('updated_at','desc')->paginate(5);
+        return view('pages.dashboard')->withComplaints($complaints);
+
+    }
     public function getClosedDashboard()
     {
         if(Auth::user()->name=='Admin')
