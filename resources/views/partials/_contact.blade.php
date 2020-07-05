@@ -50,8 +50,8 @@
               <ul class="list-unstyled footer-link">
                 <li class="d-block mb-3">
                   <span class="d-block text-black">Address:</span>
-                  <span>Computer Center MNNIT Allahabad, Prayagraj, (U.P.)</span></li>
-                <li class="d-block mb-3"><span class="d-block text-black">Phone:</span><span>+1 242 4942 290</span></li>
+                  <span>Computer Center MNNIT Allahabad, Prayagraj (U.P.)</span></li>
+                <li class="d-block mb-3"><span class="d-block text-black">Phone:</span><span>0532 254 5404</span></li>
                 <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span>ccqueries@mnnit.ac.in</span></li>
               </ul>
             </div>

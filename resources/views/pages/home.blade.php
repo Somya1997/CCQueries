@@ -63,21 +63,22 @@
           <a href="#"><img src="../images/admin_building_900x587.jpg" alt="Image" class="img-fluid"></a>
           <div class="px-md-3">
             <h3><a href="#">Administrative Building</a></h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+            <p>The administrative building is responsible for the maintenance and supervision of the institution. The aesthetics of the building is one of the principal aspects that add to the beautification of campus infrastructure. 
+                </p>
           </div>
         </div>
         <div class="service text-center">
           <a href="#"><img src="../images/Computer_Centre_MNNIT_900x587.jpg" alt="Image" class="img-fluid"></a>
           <div class="px-md-3">
           <h3><a href="#">Computer Center</a></h3>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+          <p>The computer centre is solely responsible for keeping Computation related facilities available to each and every member of MNNIT Allahabad. Computer Center provides Email, Web, DNS, FTP, Internet access, HPC and other services 24 hours and 365 days a year. </p>
         </div>
         </div>
         <div class="service text-center">
           <a href="#"><img src="../images/main_building_900x587.jpg" alt="Image" class="img-fluid"></a>
           <div class="px-md-3">
             <h3><a href="#">Main Building</a></h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+            <p>The main building constitutes most of the departments of the institute and the central library which is responsible for the academic activities that helps in grooming the students in their respective fields.  </p>
           </div>
       </div>
       </div>

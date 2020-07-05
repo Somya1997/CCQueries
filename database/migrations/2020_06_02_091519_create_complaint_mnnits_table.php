@@ -17,6 +17,7 @@ class CreateComplaintMnnitsTable extends Migration
             $table->integer('student_id')->unsigned();
             $table->foreign('student_id')->references('id')->on('student_mnnits'); 
             $table->string('nature');
+            $table->string('remark')->nullable();
             $table->time('availabletime');
             $table->date('availabledate');
             $table->string('staff')->default(0);

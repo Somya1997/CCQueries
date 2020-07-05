@@ -21,8 +21,14 @@
                                 Review Complaints</a>
                         </li>
                         
-                        @endif
+                        @else
+                        <li class="{{ Request::is('pending')? 'active':'' }}">
+                            <a href="/pending">
+                            Pending Complaints</a>
+                        </li> 
 
+                        @endif
+                        
                         <li class="{{ Request::is('closed')? 'active':'' }}">
                         <a href="/closed">
                                 Closed Complaints</a>
