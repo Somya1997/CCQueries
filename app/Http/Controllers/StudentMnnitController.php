@@ -84,7 +84,8 @@ class StudentMnnitController extends Controller
 
         $complaintMnnit->save();
 
-
+        Mail::send(new ComplaintRegistered($studentMnnit));
+               
         Session::flash('success', 'Complaint Registered successfully with complaint id: ');
 
         return redirect()->route('complaints.show',$studentMnnit->id);
@@ -102,7 +103,6 @@ class StudentMnnitController extends Controller
     {
         $studentMnnit = StudentMnnit::find($id);
         
-        Mail::send(new ComplaintRegistered($studentMnnit));
 
         return view('complaints.show')->withStudentMnnit($studentMnnit); 
     }

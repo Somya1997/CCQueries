@@ -187,14 +187,18 @@
                                     <span class="fine-print">Keep an eye out for an email confirming your complaint completed.</span>
                                   </div>
                                 </td>
-                             </tr>
-                              <tr>
-                                <td class="footer">
-                                  <span>Motilal Nehru National Institute of Technology, Allahabad</span>
-                                  <span>Barrister Mullah Colony, MNNIT Allahabad Campus, Teliarganj, Prayagraj, Uttar Pradesh 211004</a></span>
-                                  <span>COPYRIGHT &copy; MNNIT- All Rights Reserved</span>
-                                </td>
-                              </tr>
+							 </tr>
+							<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    							<tbody class="mcnDividerBlockOuter">
+									<tr>
+										<td class="footer">
+										<span>Motilal Nehru National Institute of Technology, Allahabad</span>
+										<span>Barrister Mullah Colony, MNNIT Allahabad Campus, Teliarganj, Prayagraj, Uttar Pradesh 211004</a></span>
+										<span>COPYRIGHT &copy; MNNIT- All Rights Reserved</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
     </tbody>
 </table>
 
