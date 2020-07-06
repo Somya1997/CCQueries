@@ -91,17 +91,15 @@ class PagesController extends Controller
                 {
                     $complaint=ComplaintMnnit::where('student_id','=', $request->id)
                                 ->update(['status'=>3]);
-                    $closedMail=StudentMnnit::find($complaintMnnit);
-                    Mail::send(new closingMail($closedMail));
-                    Session::flash('success','successfully updated');
+                    
                 }
                 if(isset($_GET["fail"]))
                 {
                     $complaint=ComplaintMnnit::where('student_id','=', $request->id)
                                 ->update(array('status'=>-2));
-                
-                                Session::flash('success','successfully updated');
                 }
+                $closedMail=StudentMnnit::find($request->id);
+                 Mail::send(new closingMail($closedMail));
                 return redirect('review');
             }
             else
