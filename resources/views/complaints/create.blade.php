@@ -33,9 +33,15 @@
             function TDate() {
                 var availabledate = document.getElementById("availabledate").value;
                 var ToDate = new Date();
+<<<<<<< HEAD
                 
                 if (new Date(availabledate).getTime() <= new Date()) {
                     alert("Invalid date.Please try again!");
+=======
+
+                if (new Date(availabledate).getTime() <= ToDate.getTime()) {
+                    alert("Inappropriate date! The date and time cannot be before Current time");
+>>>>>>> 0ea959175f73c2c58c2bebf03ae64927ce91d0a4
                     return false;
                 }
                 return true;
@@ -93,7 +99,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="room">Room No.:</label>
-                                        <input type="text" class="form-control" name="room" id="room" required='' data-parsley-type="integer" data-parsley-range="[1, 300]" data-parsley-trigger="keyup" />
+                                        <input type="text" class="form-control" name="room" id="room" required='' data-parsley-type="integer" data-parsley-range="[1, 1000]" data-parsley-trigger="keyup" />
                                         <span class="text-danger">{{ $errors->first('room') }}</span>
                                     </div>
                                     <div class="form-group">
