@@ -33,13 +33,16 @@
             function TDate() {
                 var availabledate = document.getElementById("availabledate").value;
                 var ToDate = new Date();
-
-                if (new Date(availabledate).getTime() <= ToDate.getTime()) {
-                    alert("The Date must be Bigger or Equal to today's date.");
+                
+                if (new Date(availabledate).getTime() <= new Date()) {
+                    alert("Invalid date.Please try again!");
                     return false;
                 }
                 return true;
             }
+
+
+            
         </script>
 <body onload="hidefield()">
 
