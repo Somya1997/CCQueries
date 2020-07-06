@@ -175,7 +175,7 @@
                                                             @endif
                                                         </td> 
                                                     @else
-                                                        <td style="color:darkorange;"><a href="#" class="btn btn-primary">{{ substr($complaint->remark,0,50) }}{{ strlen($complaint->remark)>50 ? "...":"" }}</a></td>
+                                                    <td ><a href="" onclick="remarkfunc('{{$complaint->remark}}')" style="color:darkorange;">{{ substr($complaint->remark,0,50) }}{{ strlen($complaint->remark)>50 ? "...":"" }}</a></td>
                                                         <td>
                                                             @if($complaint->status==3)
                                                             <div style="color:#3490dc;">Successfully closed</div>

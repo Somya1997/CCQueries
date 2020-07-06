@@ -22,7 +22,7 @@ class PagesController extends Controller
     {
         if(Auth::user()->name=='Admin')
         {
-            $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id') ->where('status','=',0)->orderBy('updated_at','desc')->paginate(5);
+            $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id') ->where('status','=',0)->orderBy('updated_at','desc')->paginate(10);
             $staffs=User::where('name','!=','Admin')->get();
             return view('pages.dashboard')->withComplaints($complaints)->withStaffs($staffs);
         }
@@ -31,7 +31,7 @@ class PagesController extends Controller
             $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
             ->where('status','=',1)
             ->where('staff','=',Auth::user()->name)
-            ->orderBy('updated_at','desc')->paginate(5);
+            ->orderBy('updated_at','desc')->paginate(10);
             return view('pages.dashboard')->withComplaints($complaints);
         }
        
@@ -41,7 +41,7 @@ class PagesController extends Controller
     {
         $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
         ->where('status','=',1)
-        ->orderBy('updated_at','desc')->paginate(5);
+        ->orderBy('updated_at','desc')->paginate(10);
         $staffs=ComplaintMnnit::where('status','=',1)->get();
         return view('pages.dashboard')->withComplaints($complaints);
     }
@@ -49,7 +49,7 @@ class PagesController extends Controller
     {
         $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
         ->whereIn('status', ['-1', '2'])   //One way of checking two values in where clause
-        ->orderBy('updated_at','desc')->paginate(5);
+        ->orderBy('updated_at','desc')->paginate(10);
         return view('pages.dashboard')->withComplaints($complaints); 
     }
     public function getPending()
@@ -57,7 +57,7 @@ class PagesController extends Controller
         $complaints= ComplaintMnnit::join('student_mnnits','id','=','student_id')
         ->whereIn('status',['-1','2','3'])
         ->where('staff','=',Auth::user()->name)
-        ->orderBy('updated_at','desc')->paginate(5);
+        ->orderBy('updated_at','desc')->paginate(10);
         return view('pages.dashboard')->withComplaints($complaints);
 
     }
@@ -68,7 +68,7 @@ class PagesController extends Controller
             $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
             ->where('status','=',3)         // second way of checking two values in where clause
             ->orWhere('status','=',-2)
-            ->orderBy('updated_at','desc')->paginate(5);
+            ->orderBy('updated_at','desc')->paginate(10);
             return view('pages.dashboard')->withComplaints($complaints);
         }
         else
@@ -77,7 +77,7 @@ class PagesController extends Controller
         ->where('status','=',3)
         ->orWhere('status','=',-2)
         ->where('staff','=',Auth::user()->name)
-        ->orderBy('updated_at','desc')->paginate(5); 
+        ->orderBy('updated_at','desc')->paginate(10); 
         return view('pages.dashboard')->withComplaints($complaints); 
         }
         
@@ -98,8 +98,8 @@ class PagesController extends Controller
                     $complaint=ComplaintMnnit::where('student_id','=', $request->id)
                                 ->update(array('status'=>-2));
                 }
-                $closedMail=StudentMnnit::find($request->id);
-                 Mail::send(new closingMail($closedMail));
+                $studentMnnit=StudentMnnit::find($request->id);
+                 Mail::send(new closingMail($studentMnnit));
                 return redirect('review');
             }
             else

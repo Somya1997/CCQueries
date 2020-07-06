@@ -35,7 +35,7 @@
                 var ToDate = new Date();
 
                 if (new Date(availabledate).getTime() <= ToDate.getTime()) {
-                    alert("The Date must be Bigger or Equal to today's date.");
+                    alert("Inappropriate date! The date and time cannot be before Current time");
                     return false;
                 }
                 return true;
@@ -90,7 +90,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="room">Room No.:</label>
-                                        <input type="text" class="form-control" name="room" id="room" required='' data-parsley-type="integer" data-parsley-range="[1, 300]" data-parsley-trigger="keyup" />
+                                        <input type="text" class="form-control" name="room" id="room" required='' data-parsley-type="integer" data-parsley-range="[1, 1000]" data-parsley-trigger="keyup" />
                                         <span class="text-danger">{{ $errors->first('room') }}</span>
                                     </div>
                                     <div class="form-group">
