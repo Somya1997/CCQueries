@@ -33,13 +33,22 @@
             function TDate() {
                 var availabledate = document.getElementById("availabledate").value;
                 var ToDate = new Date();
+<<<<<<< HEAD
+                
+                if (new Date(availabledate).getTime() <= new Date()) {
+                    alert("Invalid date.Please try again!");
+=======
 
                 if (new Date(availabledate).getTime() <= ToDate.getTime()) {
                     alert("Inappropriate date! The date and time cannot be before Current time");
+>>>>>>> 0ea959175f73c2c58c2bebf03ae64927ce91d0a4
                     return false;
                 }
                 return true;
             }
+
+
+            
         </script>
 <body onload="hidefield()">
 
