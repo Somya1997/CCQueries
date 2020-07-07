@@ -80,19 +80,19 @@
                                                     @else
                                                         <th>Assigned Staff</th>
                                                         <th> Staff Remark</th>
-                                                        <th colspan="2"> Complaint Status </th>
+                                                        @if(Request::is('review'))
+                                                        <th> Complaints Status</th>
+                                                        @endif 
                                                     @endif
 
                                                 @elseif(Request::is('pending'))
-                                                    <th>Remark</th>
-                                                    <th>Complaint Status</th>
+                                                    <th>Staff Remark</th>
 
                                                 @else    
                                                     @if(Request::is('dashboard'))
                                                     <th> Complaint Status </th>
                                                     @else
-                                                        <th>Staff Remark</th>
-                                                        <th colspan="2"> Complaint Status </th>
+                                                    <th>Staff Remark</th>
                                                     @endif
                                                 @endif
                                             </tr>
@@ -131,34 +131,30 @@
                                                         <!-- For review And closed of admin -->
                                                         @else
                                                             <td>{{$complaint->staff}}</td>
-                                                            <td ><a href="" onclick="remarkfunc('{{$complaint->remark}}')" style="color:darkorange;">{{ substr($complaint->remark,0,50) }}{{ strlen($complaint->remark)>50 ? "...":"" }}</a></td>
-                                                      
+                                                            <td >
+                                                            @if($complaint->status==3)
+                                                               <a href="" onclick="remarkfunc('{{$complaint->remark}}')" style="color:darkorange;">{{ substr($complaint->remark,0,50) }}{{ strlen($complaint->remark)>50 ? "...":"" }}</a>
+                                                            @else
+                                                            <div style="color:darkorange;">Failed complaint</div>
+                                                            @endif      
+                                                            </td>
                                                             @if(Request::is('review'))
                                                             <td >
                                                                 <div class="btn-group" name="status" id="status">
                                                                     <a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?success" type="submit" >Success</a> &nbsp; &nbsp;
                                                                     <a  class="btn btn-primary btn-inline text-white py-2 px-3" type="submit" href="/actionedit/{{$complaint->student_id}}?fail" name="failed">Failed</a>
                                                                  </div>
-                                                            </td>
-                                                        <!-- Closed dashboard -->
-                                                            @else
-                                                            <td>
-                                                                @if($complaint->status==3)
-                                                                <div style="color:#3490dc;">Successfully closed</div>
-                                                                @else
-                                                                <div style="color:darkorange;">Failed complaint</div>
-                                                                @endif
-                                                            </td>
+</td>
                                                             @endif
                                                         @endif
 <!-- ------------------------------------------------ Staff Dashboard Property --------------------------------------------------------------- -->
                                                     @else
                                                     @if(Request::is('dashboard'))
                                                     <td ><div class="btn-group" name="status" id="status">
-                                                            <a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?success" type="submit" >Success</a> &nbsp; &nbsp;
-                                                            <a  class="btn btn-primary btn-inline text-white py-2 px-3" type="submit" onclick="myFunction()" name="failed">Failed</a>
+                                                            <a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?success"  >Success</a> &nbsp; &nbsp;
+                                                            <a  class="btn btn-primary btn-inline text-white py-2 px-3"  onclick="myFunction('{{$complaint->student_id}}')" name="failed">Failed</a>
                                                         </div>
-                                                         <div id="remark" style="display:none;" >
+                                                         <div id="{{$complaint->student_id}}" style="display:none;" >
                                                             <form action="{{url('actionedit/'.$complaint->student_id)}}" method="GET"> 
                                                                 <input type="text" class="form-control" placeholder="Reason of failure.." name="remark"/> 
                                                                  <button type="submit" class="btn btn-primary btn-block">Submit</button>
@@ -166,22 +162,20 @@
                                                         </div>
                                                     </td>
                                                     @elseif(Request::is('pending'))
-                                                    <td style="color:darkorange;">{{$complaint->remark}}</td>
                                                         <td>
                                                             @if($complaint->status==2)
                                                             <div style="color:#3490dc;">Successfully closed</div>
                                                             @elseif($complaint->status==-1)
-                                                            <div style="color:darkorange;">Failed complaint</div>
+                                                            <a href="" onclick="remarkfunc('{{$complaint->remark}}')" style="color:darkorange;">{{ substr($complaint->remark,0,50) }}{{ strlen($complaint->remark)>50 ? "...":"" }}</a>
                                                             @endif
                                                         </td> 
                                                     @else
-                                                    <td ><a href="" onclick="remarkfunc('{{$complaint->remark}}')" style="color:darkorange;">{{ substr($complaint->remark,0,50) }}{{ strlen($complaint->remark)>50 ? "...":"" }}</a></td>
                                                         <td>
                                                             @if($complaint->status==3)
                                                             <div style="color:#3490dc;">Successfully closed</div>
                                                             @else
-                                                            <div style="color:darkorange;">Failed complaint</div>
-                                                            @endif
+                                                            <a href="" onclick="remarkfunc('{{$complaint->remark}}')" style="color:darkorange;">{{ substr($complaint->remark,0,50) }}{{ strlen($complaint->remark)>50 ? "...":"" }}</a>
+                                                             @endif
                                                         </td>
                                                     @endif
                                                     @endif
@@ -195,7 +189,7 @@
                                         <div class="text-left">
                                         {{ $complaints->links() }}
                                         </div>
-                                        @if(Request::is('closed'))
+                                        @if(Request::is('closed') && Auth::user()->name=='Admin')
                                         <div class="text-right">
                                         <a href='/pdfview' class="btn btn-primary">Export PDF</a>
                                         </div>
@@ -220,10 +214,10 @@
         console.log('oohh');
            alert(remark);
        }
-        function myFunction()
+        function myFunction( student_id)
         {
             console.log('register is set');
-            document.getElementById("remark").style.display="block";
+            document.getElementById(student_id).style.display="block";
         }
     </script>
 @stop

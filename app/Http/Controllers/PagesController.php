@@ -55,7 +55,7 @@ class PagesController extends Controller
     public function getPending()
     {
         $complaints= ComplaintMnnit::join('student_mnnits','id','=','student_id')
-        ->whereIn('status',['-1','2','3'])
+        ->whereIn('status',['-1','2'])
         ->where('staff','=',Auth::user()->name)
         ->orderBy('updated_at','desc')->paginate(10);
         return view('pages.dashboard')->withComplaints($complaints);
@@ -98,7 +98,7 @@ class PagesController extends Controller
                     $complaint=ComplaintMnnit::where('student_id','=', $request->id)
                                 ->update(array('status'=>-2));
                 }
-                $studentMnnit=StudentMnnit::find($request->id);
+                $studentMnnit=StudentMnnit::find($complaintMnnit);
                  Mail::send(new closingMail($studentMnnit));
                 return redirect('review');
             }
