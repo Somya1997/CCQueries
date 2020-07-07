@@ -98,7 +98,7 @@ class PagesController extends Controller
                     $complaint=ComplaintMnnit::where('student_id','=', $request->id)
                                 ->update(array('status'=>-2));
                 }
-                $studentMnnit=StudentMnnit::find($request->id);
+                $studentMnnit=StudentMnnit::find($complaintMnnit);
                  Mail::send(new closingMail($studentMnnit));
                 return redirect('review');
             }
