@@ -39,7 +39,7 @@ class closingMail extends Mailable
     {
         return $this->from('mnnit.ccquesries@gmail.com', 'Computer Center MNNIT')
                     ->to($this->studentMnnit->email, $this->studentMnnit->name)
-                    ->subject('Mnnit CcQueries')
+                    ->subject('Confirmation mail for complaint number # '.$this->studentMnnit->id)
                     ->view('email.closedmail');
     }
 }

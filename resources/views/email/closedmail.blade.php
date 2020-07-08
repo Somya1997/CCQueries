@@ -178,7 +178,7 @@
                                     <br>
                                     <span class="delivery-info--instr">Registration Number </span>
 									<span>{{$studentMnnit->regno}}</span>
-									
+									<br>
 									<span class="delivery-info--instr">Complaint Status </span>
 									<span>Successfully Closed</span>
 									
@@ -187,6 +187,7 @@
                                 </td>
                               </tr>
                              <tr>
+							 
                                 <td>
 								  <div class="clearfix"></div>
 									<hr>

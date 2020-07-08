@@ -207,17 +207,17 @@
         </div>
 
     </div>
-    <script>
-   
-       function remarkfunc(remark)
-       {
-        console.log('oohh');
-           alert(remark);
-       }
-        function myFunction( student_id)
-        {
-            console.log('register is set');
-            document.getElementById(student_id).style.display="block";
-        }
-    </script>
+<script>
+
+    function remarkfunc(remark)
+    {
+    console.log('oohh');
+        alert(remark);
+    }
+    function myFunction( student_id)
+    {
+        console.log('register is set');
+        document.getElementById(student_id).style.display="block";
+    }
+</script>
 @stop

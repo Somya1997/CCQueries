@@ -99,7 +99,7 @@ class PagesController extends Controller
                                 ->update(array('status'=>-2));
                 }
                 $studentMnnit=StudentMnnit::find($complaintMnnit);
-                 Mail::send(new closingMail($studentMnnit));
+                Mail::send(new closingMail($studentMnnit));
                 return redirect('review');
             }
             else
