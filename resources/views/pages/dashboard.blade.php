@@ -144,7 +144,7 @@
                                                                     <a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?success" type="submit" >Success</a> &nbsp; &nbsp;
                                                                     <a  class="btn btn-primary btn-inline text-white py-2 px-3" type="submit" href="/actionedit/{{$complaint->student_id}}?fail" name="failed">Failed</a>
                                                                  </div>
-</td>
+                                                            </td>
                                                             @endif
                                                         @endif
 <!-- ------------------------------------------------ Staff Dashboard Property --------------------------------------------------------------- -->
