@@ -167,31 +167,27 @@
                                 <td>
                                   <div class="delivery-info">
 									<span class="delivery-info--subs">Computer Center MNNIT Allahabad, </span>
-									<!-- @if({{$closedMail->status}}==3) -->
-									<span><br>We are happy to let you know that your complaint, with complaint number {{$studentMnnit->id}} has been successfully resolved.In case you are not satisfied , you can register the complaint again.<br> Please find below the details: <br><br></span>
-									<!-- @else -->
-									<!-- <span><br>We are really sorry to inform you that your complaint, with complaint number {{$closedMail->id}} has not been resolved.In case you are not satisfied , you can register the complaint again or contact us for further details.<br> Please find below the details: <br><br></span>
-									@endif -->
+							
+									<span><br>We are happy to let you know that your complaint, with complaint number {{$studentMnnit->id}} has been successfully resolved.In case you are not satisfied , you can register the complaint again.<br> Please find below the details: <br> <br> </span>
+									
                                     <span class="delivery-info--recipient">Complaint Number</span>
                                     <span class="delivery-info--address">{{$studentMnnit->id}}</span>
-                                    <br />
+                                    <br>
                                     <span class="delivery-info--card">Complainant </span>
                                     <span>{{$studentMnnit->name}}</span>
-                                    <br />
+                                    <br>
                                     <span class="delivery-info--instr">Registration Number </span>
 									<span>{{$studentMnnit->regno}}</span>
-									<!-- @if({{$closedMail->status}}==3) -->
+									<br>
 									<span class="delivery-info--instr">Complaint Status </span>
 									<span>Successfully Closed</span>
-									<!-- @else
-									<span class="delivery-info--instr">Complaint Status </span>
-									<span> Cannot be resolved</span>
-									@endif -->
+									
 									<span><br><br> Do not hesitate to ask any questions related to your complaint.<br><br> Team CC MNNIT</span>
                                   </div>
                                 </td>
                               </tr>
                              <tr>
+							 
                                 <td>
 								  <div class="clearfix"></div>
 									<hr>

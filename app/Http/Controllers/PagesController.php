@@ -73,12 +73,12 @@ class PagesController extends Controller
         }
         else
         {
-        $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
-        ->where('status','=',3)
-        ->orWhere('status','=',-2)
-        ->where('staff','=',Auth::user()->name)
-        ->orderBy('updated_at','desc')->paginate(10); 
-        return view('pages.dashboard')->withComplaints($complaints); 
+            $complaints = ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')
+            ->where('status','=',3)
+            ->orWhere('status','=',-2)
+            ->where('staff','=',Auth::user()->name)
+            ->orderBy('updated_at','desc')->paginate(10); 
+            return view('pages.dashboard')->withComplaints($complaints); 
         }
         
     }
@@ -99,7 +99,7 @@ class PagesController extends Controller
                                 ->update(array('status'=>-2));
                 }
                 $studentMnnit=StudentMnnit::find($complaintMnnit);
-                 Mail::send(new closingMail($studentMnnit));
+                Mail::send(new closingMail($studentMnnit));
                 return redirect('review');
             }
             else
