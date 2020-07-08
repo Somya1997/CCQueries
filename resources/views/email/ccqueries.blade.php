@@ -167,7 +167,7 @@
                                 <td>
                                   <div class="delivery-info">
 									<span class="delivery-info--subs">Computer Center MNNIT Allahabad, </span>
-                                    <span><br>We are happy to let you know that your complaint has been registered with us and your complaint number is {{$studentMnnit->id}}. We will try to solve your complaint as soon as possible. The staff will contact you, within your available time, for further details. You can also track the status of your complaint on our website by simply entring your complaint number.<br> Please find below the details:<br><br></span>
+                                    <span><br>We are happy to let you know that your complaint has been registered with us and your complaint number is {{$studentMnnit->id}}. We will try to solve your complaint as soon as possible. The staff will contact you, within your available time, for further details. You can also track the status of your complaint on our website by simply entering your complaint number.<br> Please find below the details:<br><br></span>
                                     <span class="delivery-info--recipient">Complaint Number</span>
                                     <span class="delivery-info--address">{{$studentMnnit->id}}</span>
                                     <br />

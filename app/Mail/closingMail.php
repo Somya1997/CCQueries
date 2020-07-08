@@ -25,7 +25,7 @@ class closingMail extends Mailable
      *
      * @return void
      */
-    public function __construct(StudentMnnit $studentMnnit)
+    public function __construct($studentMnnit)
     {
         $this->studentMnnit=$studentMnnit;
     }

@@ -85,16 +85,13 @@
                                                         @endif 
                                                     @endif
 
-                                                <!-- @elseif(Request::is('pending'))
-                                                    <th>Staff Remark</th> -->
-
                                                 @else    
                                                     @if(Request::is('dashboard'))
                                                     <th> Complaint Status </th>
                                                     @else
                                                     <th>Staff Remark</th>
                                                     @endif
-                                                @endif
+                                                @endif 
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -141,8 +138,8 @@
                                                             </td>
                                                             <td >
                                                                 <div class="btn-group" name="status" id="status">
-                                                                    <a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?success" type="submit" >Success</a> &nbsp; &nbsp;
-                                                                    <a  class="btn btn-primary btn-inline text-white py-2 px-3" type="submit" href="/actionedit/{{$complaint->student_id}}?fail" name="failed">Failed</a>
+                                                                    <a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?close" type="submit" >Close</a> &nbsp; &nbsp;
+                                                                    <a  class="btn btn-primary btn-inline text-white py-2 px-3" type="submit" href="/actionedit/{{$complaint->student_id}}?reopen" name="failed">Reopen</a>
                                                                  </div>
                                                             </td>
                                                             @else

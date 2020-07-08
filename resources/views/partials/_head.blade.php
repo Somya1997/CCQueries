@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700|Oswald:400,700" rel="stylesheet">
 
-    <script type="text/javascript" src="https://malsup.github.io/jquery.blockUI.js"> </script>
     <link rel="stylesheet" href="{{ URL::asset('fonts/icomoon/style.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/jquery.fancybox.min.css') }}">

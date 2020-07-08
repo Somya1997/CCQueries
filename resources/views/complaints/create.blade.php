@@ -62,7 +62,7 @@
 
                     
 
-                                    <form enctype="multipart/form-data" action="{{ route('complaints.store') }}" method="POST" data-parsley-validate=''>
+                                    <form enctype="multipart/form-data" autocomplete="off" action="{{ route('complaints.store') }}" method="POST" data-parsley-validate=''>
                                                 @csrf
                                     <div class="form-group">    
                                         <label for="name">Name:</label>
