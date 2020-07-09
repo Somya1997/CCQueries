@@ -102,7 +102,7 @@ class StudentMnnitController extends Controller
      */
     public function show($id)
     {
-        $studentMnnit=ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')->find($id);
+        $studentMnnit = StudentMnnit::join('complaint_mnnits','student_id','=','id')->find($id);
         return view('complaints.show')->withStudentMnnit($studentMnnit); 
     }
 
