@@ -1,4 +1,4 @@
-
+@Auth
 @extends('main')
 
 @section('heading')
@@ -86,5 +86,5 @@
         </div>
     </div>
 </div>
-
 @endsection
+@endAuth
