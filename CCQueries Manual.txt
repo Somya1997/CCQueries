@@ -5,8 +5,10 @@ Password: admin@mnnit
 Login details of registered staff:
 1. Username: Sunil Kumar
    Password: sunil@mnnit
+
 2. Username: Ambuj Mishra
    Password: ambuj@mnnit
+
 3. Username: Sateesh Kumar
    Password: Sateesh@mnnit
 
@@ -29,14 +31,14 @@ The dashboard with details of new complaint will appear . Here you can assign th
 
 You can logout and register a new staff by choosing from the dropdown which appears after clicking the username on the right hand corner.
 
-You can also navigate through different links provided in the side bar i,e
+You can also navigate through different links provided in the sidebar i.e
   -Assigned Complaints: This shows the list of those complaints which have been assigned to the staffs  with all the relevant details.
   -Review Complaints: This shows the list of those complaints which are closed by staff along with staff remark. In case if staff remark is not fully visible then you can click on it
 		      and view the remark.You can either finally close the complaints or can reopen them as required. Also a mail will be sent to student notifying the final status of
 		      there complaint i,e whether it is closed or reopened. 
   -Closed Complaints: This shows the details of all complaints that have been permanently closed by you. Also you can download all the details in the form of pdf by clicking on export pdf/
 
-  [NOTE: The compalaints in the table are ordered accordin to their latest update .]
+  [NOTE: The compalaints in the table are ordered according to their latest update .]
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 Staff Handle:
@@ -45,7 +47,7 @@ The dashboard with details of new complaint assigned to that particular staff wi
  
 You can logout from the dropdown which appears after clicking the username on the right hand corner.
 
-You can also navigate through different links provided in the side bar i,e
+You can also navigate through different links provided in the sidebar i.e
   -Pending Complaints: This shows the list of those complaints which are closed by staff but waiting for admin review.
   -Closed Complaints: This shows all the past complaints which where assigned to him and permanently closed by admin.
 
