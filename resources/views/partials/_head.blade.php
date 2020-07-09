@@ -1,6 +1,6 @@
 <title>CC queries</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700|Oswald:400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ URL::asset('fonts/icomoon/style.css') }}">

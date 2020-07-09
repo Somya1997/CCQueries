@@ -18,9 +18,10 @@ class StudentMnnitController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $track=$request->track;
+        return redirect()->route('complaints.show',$track);
     }
 
     /**
@@ -101,9 +102,7 @@ class StudentMnnitController extends Controller
      */
     public function show($id)
     {
-        $studentMnnit = StudentMnnit::find($id);
-        
-
+        $studentMnnit=ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')->find($id);
         return view('complaints.show')->withStudentMnnit($studentMnnit); 
     }
 
