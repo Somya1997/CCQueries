@@ -53,7 +53,7 @@
 												<span class="line"></span>
 												<p>Processing</p>
 											</div>
-											<div class="Staff_Assigned">
+											<div class="{{$studentMnnit->status==0?'Not_Assigned':'Staff_Assigned'}}">
 												<div class="imgcircle">
 														<img src="../images/quality.png" alt="quality check">
 												</div>
