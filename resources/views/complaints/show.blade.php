@@ -25,7 +25,7 @@
 							<h1 style="text-align:center; font-family:calibri; color:white;">COMPLAINT TRACKING</h1>
 					</div>
 					
-							<div class="content2 d-flex justify-content-around top">
+							<div class="content2 d-flex justify-content-around top" style="background:rgba(242, 230, 215, 0.65)">
 								<div class="content2-header1">
 									<p>Complaint Number #{{$studentMnnit->id}}</p>
 								</div>
@@ -41,35 +41,35 @@
 									<div class="complaint_tracking">
 											<div class="Complaint_Registered">
 												<div class="imgcircle">
-														<img src="../images/confirm.png" alt="confirm order">
+														<img src="../images/processed.png" alt="confirm order">
 												</div>
 												<span class="line"></span>
 												<p>Complaint Registered</p>
 											</div>
 											<div class="Processing">
 												<div class="imgcircle">
-														<img src="../images/process.png" alt="process order">
+														<img src="../images/proce.png" alt="process order">
 												</div>
 												<span class="line"></span>
 												<p>Processing</p>
 											</div>
 											<div class="{{$studentMnnit->status==0?'Not_Assigned':'Staff_Assigned'}}">
 												<div class="imgcircle">
-														<img src="../images/quality.png" alt="quality check">
+														<img src="../images/assign.png" alt="quality check">
 												</div>
 												<span class="line"></span>
 												<p>Staff Assigned</p>
 											</div>
-											<div class="Complaint_Resolved">
+											<div class="{{$studentMnnit->status==0 || $studentMnnit->status==1 ?'Not_Resolved':'Complaint_Resolved'}}">
 												<div class="imgcircle">
-														<img src="../images/dispatch.png" alt="dispatch product">
+														<img src="../images/resolve.png" alt="dispatch product">
 												</div>
 												<span class="line"></span>
 												<p>Complaint Resolved</p>
 											</div>
-											<div class="Complaint_Closed">
+											<div class="{{$studentMnnit->status==3 || $studentMnnit->status==-2 ?'Complaint_Closed':'Not_Closed'}}">
 												<div class="imgcircle">
-														<img src="../images/delivery.png" alt="delivery">
+														<img src="../images/close.png" alt="delivery">
 												</div>
 												<p>Complaint Closed</p>
 											</div>

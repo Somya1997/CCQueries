@@ -49,11 +49,18 @@ span.line {
 	float:left;
 	margin-left:5%;
 }
+<<<<<<< HEAD
 
 .Staff_Assigned .imgcircle,.Complaint_Registered .imgcircle {
 	background-color:rgb(132, 204, 122);
 }
 .Staff_Assigned span.line, .Complaint_Registered span.line{
+=======
+.Complaint_Registered .imgcircle , .Processing .imgcircle , .Staff_Assigned .imgcircle , .Complaint_Resolved .imgcircle, .Complaint_Closed .imgcircle {
+	background-color:rgb(132, 204, 122);
+}
+.Complaint_Registered span.line, .Processing span.line , .Staff_Assigned span.line , .Complaint_Resolved span.line, .Complaint_Closed span.line {
+>>>>>>> 686b27c0e59a5c45836ae498f1bb6231586c01cd
 	background-color:rgb(132, 204, 122); 
 }
 .content3 p {
@@ -74,25 +81,29 @@ span.line {
 	top: 28%;
 	left: 30%;
 }
-.Processing{
+.Processing {
 	position:relative;
 	width:20%;
 	text-align:center;
 	float:left;
 }
+<<<<<<< HEAD
 .Staff_Assigned, .Not_Assigned {
+=======
+.Staff_Assigned, .Not_Assigned{
+>>>>>>> 686b27c0e59a5c45836ae498f1bb6231586c01cd
 	position:relative;
 	width:20%;
 	text-align:center;
 	float:left;
 }
-.Complaint_Resolved{
+.Complaint_Resolved, .Not_Resolved{
 	position:relative;
 	width:20%;
 	text-align:center;
 	float:left;
 }
-.Complaint_Closed{
+.Complaint_Closed, .Not_Closed{
 	position:relative;
 	width:20%;
 	text-align:center;
