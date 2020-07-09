@@ -1,4 +1,4 @@
-
+@Auth
 @extends('main')
 
 @section('heading')
@@ -88,3 +88,6 @@
 </div>
 
 @endsection
+@else
+    <div class="text-center">Not authorized to access this page..</div>
+@endAuth
