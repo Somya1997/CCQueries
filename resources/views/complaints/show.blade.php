@@ -25,7 +25,7 @@
 							<h1 style="text-align:center; font-family:calibri; color:white;">COMPLAINT TRACKING</h1>
 					</div>
 					
-							<div class="content2 d-flex justify-content-around top">
+							<div class="content2 d-flex justify-content-around top" style="background:rgba(242, 230, 215, 0.65)">
 								<div class="content2-header1">
 									<p>Complaint Number #{{$studentMnnit->id}}</p>
 								</div>
