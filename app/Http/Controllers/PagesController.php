@@ -87,19 +87,29 @@ class PagesController extends Controller
     {
             if(Auth::user()->name=='Admin')
             {
-                if(isset($_GET["success"]))
+                if(isset($_GET["close"]))
                 {
-                    $complaint=ComplaintMnnit::where('student_id','=', $request->id)
+                    $complaint=ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')->find($complaintMnnit);
+                    if($complaint->status==2)
+                    {
+                    $complaintUpdate=ComplaintMnnit::where('student_id','=', $request->id)
                                 ->update(['status'=>3]);
+                    }
+                    else
+                    {
+                        $complaintUpdate=ComplaintMnnit::where('student_id','=', $request->id)
+                                ->update(array('status'=>-2));
+                    }
+                    $complaint=ComplaintMnnit::join('student_mnnits', 'id', '=', 'student_id')->find($complaintMnnit);
+                    Mail::send(new closingMail($complaint));
                     
                 }
-                if(isset($_GET["fail"]))
+                if(isset($_GET["reopen"]))
                 {
-                    $complaint=ComplaintMnnit::where('student_id','=', $request->id)
-                                ->update(array('status'=>-2));
+                    $complaintUpdate=ComplaintMnnit::where('student_id','=', $request->id)
+                                ->update(array('status'=>1));
                 }
-                $studentMnnit=StudentMnnit::find($complaintMnnit);
-                Mail::send(new closingMail($studentMnnit));
+                // $studentMnnit=StudentMnnit::find($complaintMnnit);
                 return redirect('review');
             }
             else

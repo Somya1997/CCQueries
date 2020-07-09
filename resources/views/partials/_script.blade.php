@@ -17,5 +17,6 @@
     <script src="{{ URL::asset('js/main.js') }}"></script>
     <script src="{{asset('js/main2.js') }}"></script>
     <script src="{{asset('js/button.js') }}"></script>
+    <!-- <script type="text/javascript" src="https://malsup.github.io/jquery.blockUI.js"> </script> -->
     
     

@@ -85,16 +85,13 @@
                                                         @endif 
                                                     @endif
 
-                                                @elseif(Request::is('pending'))
-                                                    <th>Staff Remark</th>
-
                                                 @else    
                                                     @if(Request::is('dashboard'))
                                                     <th> Complaint Status </th>
                                                     @else
                                                     <th>Staff Remark</th>
                                                     @endif
-                                                @endif
+                                                @endif 
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -131,20 +128,29 @@
                                                         <!-- For review And closed of admin -->
                                                         @else
                                                             <td>{{$complaint->staff}}</td>
-                                                            <td >
-                                                            @if($complaint->status==3)
-                                                               <a href="" onclick="remarkfunc('{{$complaint->remark}}')" style="color:darkorange;">{{ substr($complaint->remark,0,50) }}{{ strlen($complaint->remark)>50 ? "...":"" }}</a>
-                                                            @else
-                                                            <div style="color:darkorange;">Failed complaint</div>
-                                                            @endif      
-                                                            </td>
                                                             @if(Request::is('review'))
+                                                            <td>
+                                                                @if($complaint->status==2)
+                                                                <div style="color:#3490dc;">Successfully closed</div>
+                                                                @elseif($complaint->status==-1)
+                                                                <a href="" onclick="remarkfunc('{{$complaint->remark}}')" style="color:darkorange;">{{ substr($complaint->remark,0,50) }}{{ strlen($complaint->remark)>50 ? "...":"" }}</a>
+                                                                @endif
+                                                            </td>
                                                             <td >
                                                                 <div class="btn-group" name="status" id="status">
-                                                                    <a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?success" type="submit" >Success</a> &nbsp; &nbsp;
-                                                                    <a  class="btn btn-primary btn-inline text-white py-2 px-3" type="submit" href="/actionedit/{{$complaint->student_id}}?fail" name="failed">Failed</a>
+                                                                    <a class="btn btn-secondary text-white py-2 px-2" href="/actionedit/{{$complaint->student_id}}?close" type="submit" >Close</a> &nbsp; &nbsp;
+                                                                    <a  class="btn btn-primary btn-inline text-white py-2 px-3" type="submit" href="/actionedit/{{$complaint->student_id}}?reopen" name="failed">Reopen</a>
                                                                  </div>
                                                             </td>
+                                                            @else
+                                                            <td>
+                                                                @if($complaint->status==3)
+                                                                <div style="color:#3490dc;">Successfully closed</div>
+                                                                @else
+                                                                <a href="" onclick="remarkfunc('{{$complaint->remark}}')" style="color:darkorange;">{{ substr($complaint->remark,0,50) }}{{ strlen($complaint->remark)>50 ? "...":"" }}</a>
+                                                                @endif
+                                                             </td>
+</td>
                                                             @endif
                                                         @endif
 <!-- ------------------------------------------------ Staff Dashboard Property --------------------------------------------------------------- -->
