@@ -168,11 +168,11 @@
                                   <div class="delivery-info">
 									<span class="delivery-info--subs">Computer Center MNNIT Allahabad, </span>
 									@if($studentMnnit->status==3)
-									<span><br>We are happy to let you know that your complaint, with complaint number {{$studentMnnit->id}} has been successfully resolved.In case you are not satisfied , you can register the complaint again.<br> Please find below your details: <br> <br> </span>
+									<span><br>We are happy to let you know that your complaint, with complaint number {{$studentMnnit->id}} has been successfully resolved. In case you are not satisfied, you can register the complaint again.<br> Please find below the relevant details: <br> <br> </span>
 									@elseif($studentMnnit->status==-2)
-									<span><br>We are sorry that your complaint, with complaint number {{$studentMnnit->id}} was not resolved.In case you are not satisfied , you can register the complaint again. Contact us for any further details <br> Please find below your details: <br> <br> </span>
+									<span><br>We are sorry to let you know that your complaint, with complaint number {{$studentMnnit->id}} can not be resolved. In case you are not satisfied , you can register the complaint again. Contact us for any further details <br> Please find below the relevant details: <br> <br> </span>
 									@else
-									<span><br>Your complaint, with complaint number {{$studentMnnit->id}} has been reopened .In case of any query you can contact us, you will be provided with the details.<br> Please find below your details: <br> <br> </span>
+									<span><br>Your complaint, with complaint number {{$studentMnnit->id}} has been reopened again. Our staffs will reach out to you shortly. In case of any query feel free to contact us.<br> Please find below the relevant details: <br> <br> </span>
 									@endif
                                     <span class="delivery-info--recipient">Complaint Number</span>
                                     <span class="delivery-info--address">{{$studentMnnit->id}}</span>
@@ -184,8 +184,13 @@
 									<span>{{$studentMnnit->regno}}</span>
 									<br>
 									<span class="delivery-info--instr">Complaint Status </span>
-									<span>Successfully Closed</span>
-									
+									@if($studentMnnit->status==3)
+										<span>Successfully Closed</span>
+									@elseif($studentMnnit->status==-2)
+										<span>Closed</span>
+									@else
+										<span>Reopened</span>
+									@endif
 									<span><br><br> Do not hesitate to ask any questions related to your complaint.<br><br> Team CC MNNIT</span>
                                   </div>
                                 </td>

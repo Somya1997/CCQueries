@@ -29,7 +29,7 @@
         <br>
           <h1>CC QUERIES</h1>
           <p class="mb-5">WANT TO CHECK YOUR COMPLAINT STATUS, JUST ENTER YOUR COMPLAINT NUMBER</p>
-          <form action="#">
+          <form action="#" autocomplete="off">
             <div class="form-group d-flex">
               <input type="text" class="form-control" id="track" placeholder="Enter your complaint number">
             </div>
